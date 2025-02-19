@@ -1,14 +1,14 @@
 import bcrypt from 'bcryptjs';
 import { sendVerificationEmail } from '../helpers/sendVerificationMail';
 import { Request, Response } from 'express';
-import  UserModel  from '../models/userModel';
+import UserModel from '../models/userModel';
 import jwt from 'jsonwebtoken';
-
+import { JwtPayload, User } from '../types/types';
 
 
 export const register = async (req:Request, res:any) => {
    try {
-      const { username, email, password, role } = req.body;
+      const { username, email, password, role }:User = req.body;
       // Check for existing verified user with same username
       const existingUserVerifiedByUsername = await UserModel.findOne({ 
           username, 
@@ -84,14 +84,14 @@ export const verify = async (req:Request, res:any) => {
         const decodedUsername = decodeURIComponent(username);
         const user = await UserModel.findOne({username:decodedUsername});
         if(!user){
-           return res.status(404).json({message:"User not found",success:false});
+            res.status(404).json({message:"User not found",success:false});
         }
         const isCodeValid = user.verifyCode === code;
         const isCodeNotExpired = new Date() < new Date(user.verifyCodeExpiry);
         if(isCodeValid && isCodeNotExpired){
            user.isVerified = true;
            await user.save();
-           return res.status(200).json({message:"User verified",success:true});
+           res.status(200).json({message:"User verified",success:true});
         }else if(!isCodeValid){
            return res.status(400).json({message:"Invalid code",success:false});}
            else if(!isCodeNotExpired){
@@ -120,24 +120,31 @@ export const login = async (req:Request, res:any) => {
                 message: "User not verified"
             });
         }
-        const isPasswordValid = await bcrypt.compare(password, user.password);
+        const isPasswordValid:boolean = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
             return res.status(400).json({
                 success: false,
                 message: "Invalid credentials"
             });
         }
+        const payload: JwtPayload = {
+            userId: user._id.toString(),
+            email: user.email,
+            role: user.role,
+            username: user.username
+        };
+
+        // Sign JWT
         const token = jwt.sign(
-            { 
-                userId: user._id,
-                email: user.email,
-                role: user.role
-            },
+            payload,
             process.env.JWT_SECRET!,
-            { expiresIn: '24h' }
+            { 
+                expiresIn: '1y',
+                algorithm: 'HS256'
+            }
         );
-        console.log(token)
-        console.log(user)
+        // console.log(token)
+        // console.log(user)
         return res.status(200).json({
             success: true,
             message: "Login successful",

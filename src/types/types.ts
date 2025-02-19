@@ -7,3 +7,10 @@ export interface User extends Document {
    role:'student' | 'instructor' | 'admin';
    verifyCodeExpiry: Date;
 }
+
+export interface JwtPayload {
+   userId: string;
+   email: string;
+   role: string;
+   username: string;
+}
