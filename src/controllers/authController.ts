@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 import { JwtPayload, User } from '../types/types';
 
 
-export const register = async (req:Request, res:any) => {
+export const register = async (req:Request, res:Response) => {
    try {
       const { username, email, password, role }:User = req.body;
       // Check for existing verified user with same username
@@ -16,7 +16,7 @@ export const register = async (req:Request, res:any) => {
       });
 
       if (existingUserVerifiedByUsername) {
-          return res.status(400).json({
+            res.status(400).json({
               success: false,
               message: "Username already exists"
           });
@@ -27,7 +27,7 @@ export const register = async (req:Request, res:any) => {
 
       if (existingUserByEmail) {
           if (existingUserByEmail.isVerified) {
-              return res.status(400).json({
+                res.status(400).json({
                   success: false,
                   message: "Email already exists"
               });
@@ -57,27 +57,27 @@ export const register = async (req:Request, res:any) => {
 
       const emailResponse = await sendVerificationEmail(email, username, verifyCode);
       if (!emailResponse.success) {
-          return res.status(500).json({
+            res.status(500).json({
               success: false,
               message: emailResponse.message
           });
       }
 
-      return res.status(201).json({
+        res.status(201).json({
           success: true,
           message: "User registered successfully, Please verify your email to login"
       });
 
   } catch (error) {
       console.error('Error registering user', error);
-      return res.status(500).json({
+        res.status(500).json({
           success: false,
           message: "Error registering user"
       });
   }
 }
 
-export const verify = async (req:Request, res:any) => {
+export const verify = async (req:Request, res:Response) => {
     try {
         const {username,code} = await req.body;
         // console.log(username,code);
@@ -93,36 +93,36 @@ export const verify = async (req:Request, res:any) => {
            await user.save();
            res.status(200).json({message:"User verified",success:true});
         }else if(!isCodeValid){
-           return res.status(400).json({message:"Invalid code",success:false});}
+             res.status(400).json({message:"Invalid code",success:false});}
            else if(!isCodeNotExpired){
-              return res.status(400).json({message:"Code expired",success:false});
+                res.status(400).json({message:"Code expired",success:false});
            }
 
      } catch (error) {
         console.log(error);
-        return res.status(500).json({message:"Error",success:false});
+          res.status(500).json({message:"Error",success:false});
      }
 }
 
-export const login = async (req:Request, res:any) => {
+export const login = async (req:Request, res:Response) => {
     try {
         const { email, password } = req.body;
         const user = await UserModel.findOne({ email });
         if (!user) {
-            return res.status(400).json({
+              res.status(400).json({
                 success: false,
                 message: "Invalid credentials"
             });
         }   
         if (!user.isVerified) {
-            return res.status(401).json({
+              res.status(401).json({
                 success: false,
                 message: "User not verified"
             });
         }
         const isPasswordValid:boolean = await bcrypt.compare(password, user.password);
         if (!isPasswordValid) {
-            return res.status(400).json({
+              res.status(400).json({
                 success: false,
                 message: "Invalid credentials"
             });
@@ -145,7 +145,7 @@ export const login = async (req:Request, res:any) => {
         );
         // console.log(token)
         // console.log(user)
-        return res.status(200).json({
+          res.status(200).json({
             success: true,
             message: "Login successful",
             data: {
@@ -154,7 +154,7 @@ export const login = async (req:Request, res:any) => {
         });
     } catch (error) {
         console.error('Error logging in user', error);
-        return res.status(500).json({
+          res.status(500).json({
             success: false,
             message: "Error logging in user"
         });
