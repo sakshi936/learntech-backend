@@ -14,3 +14,13 @@ export interface JwtPayload {
    role: string;
    username: string;
 }
+
+export interface Progress{
+   username: string;
+   roadmapSlug: string;
+   completed: boolean;
+   current: string;
+   lastUpdated: Date;
+   nextTopics: string[];
+   startDate: Date;
+}
