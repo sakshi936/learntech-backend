@@ -17,7 +17,7 @@ const register = async (req, res) => {
             isVerified: true
         });
         if (existingUserVerifiedByUsername) {
-            return res.status(400).json({
+            res.status(400).json({
                 success: false,
                 message: "Username already exists"
             });
@@ -26,7 +26,7 @@ const register = async (req, res) => {
         const verifyCode = Math.floor(100000 + Math.random() * 900000).toString();
         if (existingUserByEmail) {
             if (existingUserByEmail.isVerified) {
-                return res.status(400).json({
+                res.status(400).json({
                     success: false,
                     message: "Email already exists"
                 });
@@ -56,19 +56,19 @@ const register = async (req, res) => {
         }
         const emailResponse = await (0, sendVerificationMail_1.sendVerificationEmail)(email, username, verifyCode);
         if (!emailResponse.success) {
-            return res.status(500).json({
+            res.status(500).json({
                 success: false,
                 message: emailResponse.message
             });
         }
-        return res.status(201).json({
+        res.status(201).json({
             success: true,
             message: "User registered successfully, Please verify your email to login"
         });
     }
     catch (error) {
         console.error('Error registering user', error);
-        return res.status(500).json({
+        res.status(500).json({
             success: false,
             message: "Error registering user"
         });
@@ -77,14 +77,14 @@ const register = async (req, res) => {
 exports.register = register;
 const verify = async (req, res) => {
     try {
-        const { username, code } = await req.body;
-        // console.log(username,code);
-        const decodedUsername = decodeURIComponent(username);
-        const user = await userModel_1.default.findOne({ username: decodedUsername });
+        const { email, otp } = await req.body;
+        console.log(email, otp);
+        const decodedEmail = decodeURIComponent(email);
+        const user = await userModel_1.default.findOne({ email: decodedEmail });
         if (!user) {
             res.status(404).json({ message: "User not found", success: false });
         }
-        const isCodeValid = user.verifyCode === code;
+        const isCodeValid = user.verifyCode === otp;
         const isCodeNotExpired = new Date() < new Date(user.verifyCodeExpiry);
         if (isCodeValid && isCodeNotExpired) {
             user.isVerified = true;
@@ -92,37 +92,38 @@ const verify = async (req, res) => {
             res.status(200).json({ message: "User verified", success: true });
         }
         else if (!isCodeValid) {
-            return res.status(400).json({ message: "Invalid code", success: false });
+            res.status(400).json({ message: "Invalid code", success: false });
         }
         else if (!isCodeNotExpired) {
-            return res.status(400).json({ message: "Code expired", success: false });
+            res.status(400).json({ message: "Code expired", success: false });
         }
     }
     catch (error) {
         console.log(error);
-        return res.status(500).json({ message: "Error", success: false });
+        res.status(500).json({ message: "Error", success: false });
     }
 };
 exports.verify = verify;
 const login = async (req, res) => {
     try {
         const { email, password } = req.body;
+        console.log(email, password);
         const user = await userModel_1.default.findOne({ email });
         if (!user) {
-            return res.status(400).json({
+            res.status(400).json({
                 success: false,
                 message: "Invalid credentials"
             });
         }
         if (!user.isVerified) {
-            return res.status(401).json({
+            res.status(401).json({
                 success: false,
                 message: "User not verified"
             });
         }
         const isPasswordValid = await bcryptjs_1.default.compare(password, user.password);
         if (!isPasswordValid) {
-            return res.status(400).json({
+            res.status(400).json({
                 success: false,
                 message: "Invalid credentials"
             });
@@ -140,7 +141,7 @@ const login = async (req, res) => {
         });
         // console.log(token)
         // console.log(user)
-        return res.status(200).json({
+        res.status(200).json({
             success: true,
             message: "Login successful",
             data: {
@@ -150,7 +151,7 @@ const login = async (req, res) => {
     }
     catch (error) {
         console.error('Error logging in user', error);
-        return res.status(500).json({
+        res.status(500).json({
             success: false,
             message: "Error logging in user"
         });

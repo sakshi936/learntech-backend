@@ -24,20 +24,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
-const UserSchema = new mongoose_1.Schema({
-    username: { type: String, required: [true, 'Username is required'], trim: true, unique: true },
-    //match matches the email with the regex
-    email: { type: String, required: [true, 'Email is required'], unique: true, match: [/\S+@\S+\.\S+/, 'Please enter a valid email'] },
-    password: { type: String, required: [true, 'Password is required'] },
-    verifyCode: { type: String, required: [true, 'Verification code is required'] },
-    isVerified: { type: Boolean, default: false },
-    role: {
-        type: String,
-        enum: ['student', 'instructor', 'admin'],
-        default: 'student',
-        required: [true, 'Role is required']
-    },
-    verifyCodeExpiry: { type: Date, required: [true, "Code Expiry is required"], default: Date.now }
+const ProgressSchema = new mongoose_1.Schema({
+    username: { type: String, required: true, trim: true },
+    roadmapSlug: { type: String, required: true },
+    completed: { type: Boolean, default: false },
+    current: { type: String, required: true },
+    lastUpdated: { type: Date, default: Date.now },
+    nextTopics: { type: [String], required: true },
+    startDate: { type: Date, default: Date.now }
 });
-const UserModel = (mongoose_1.default.models.User) || mongoose_1.default.model('User', UserSchema);
-exports.default = UserModel;
+const ProgressModel = (mongoose_1.default.models.Progress) || mongoose_1.default.model('Progress', ProgressSchema);
+exports.default = ProgressModel;

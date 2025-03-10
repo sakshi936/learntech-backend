@@ -79,14 +79,14 @@ export const register = async (req:Request, res:Response) => {
 
 export const verify = async (req:Request, res:Response) => {
     try {
-        const {username,code} = await req.body;
-        // console.log(username,code);
-        const decodedUsername = decodeURIComponent(username);
-        const user = await UserModel.findOne({username:decodedUsername});
+        const {email,otp} = await req.body;
+        console.log(email,otp);
+        const decodedEmail = decodeURIComponent(email);
+        const user = await UserModel.findOne({email:decodedEmail});
         if(!user){
             res.status(404).json({message:"User not found",success:false});
         }
-        const isCodeValid = user.verifyCode === code;
+        const isCodeValid = user.verifyCode === otp;
         const isCodeNotExpired = new Date() < new Date(user.verifyCodeExpiry);
         if(isCodeValid && isCodeNotExpired){
            user.isVerified = true;
@@ -107,6 +107,7 @@ export const verify = async (req:Request, res:Response) => {
 export const login = async (req:Request, res:Response) => {
     try {
         const { email, password } = req.body;
+        console.log(email,password)
         const user = await UserModel.findOne({ email });
         if (!user) {
               res.status(400).json({
