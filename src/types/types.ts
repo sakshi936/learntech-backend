@@ -24,3 +24,12 @@ export interface Progress{
    nextTopics: string[];
    startDate: Date;
 }
+
+export interface UserProfile{
+   username: string;
+   email: string;
+   phone:string;
+   collegeName:string;
+   skills:string[];
+   course:string;
+}

@@ -10,10 +10,11 @@ const authenticateToken = async (req, res, next) => {
         const authHeader = req.headers.authorization;
         const token = authHeader?.substring(7);
         if (!token) {
-            return res.status(401).json({
+            res.status(401).json({
                 success: false,
                 message: "No token provided"
             });
+            return;
         }
         const decoded = jsonwebtoken_1.default.verify(token, process.env.JWT_SECRET);
         //   console.log(decoded)
@@ -22,12 +23,12 @@ const authenticateToken = async (req, res, next) => {
     }
     catch (error) {
         if (error instanceof jsonwebtoken_1.default.TokenExpiredError) {
-            return res.status(401).json({
+            res.status(401).json({
                 success: false,
                 message: "Token has expired"
             });
         }
-        return res.status(401).json({
+        res.status(401).json({
             success: false,
             message: "Invalid token"
         });

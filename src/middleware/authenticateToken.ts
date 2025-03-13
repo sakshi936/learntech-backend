@@ -5,17 +5,18 @@ import { JwtPayload } from '../types/types';
 
 export const authenticateToken = async (
     req: Request,
-    res: any,
+    res: Response,
     next: NextFunction
 ) => {
     try {
         const authHeader = req.headers.authorization;
         const token = authHeader?.substring(7);
         if (!token) {
-            return res.status(401).json({
+            res.status(401).json({
                 success: false,
                 message: "No token provided"
             });
+            return
         }
 
         const decoded = jwt.verify(token, process.env.JWT_SECRET!) as JwtPayload;
@@ -24,12 +25,12 @@ export const authenticateToken = async (
         next();
     } catch (error) {
       if (error instanceof jwt.TokenExpiredError) {
-         return res.status(401).json({
+         res.status(401).json({
              success: false,
              message: "Token has expired"
          });
      }
-        return res.status(401).json({
+        res.status(401).json({
             success: false,
             message: "Invalid token"
         });

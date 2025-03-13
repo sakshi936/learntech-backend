@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import dbConnect from "./db/dbConnect";
 import authRoutes from "./routes/authRoutes";
 import cors from 'cors';
+import profileRoutes from "./routes/profileRoutes";
 
 // Configure dotenv
 dotenv.config();
@@ -26,6 +27,7 @@ const PORT = process.env.PORT || 8000;
 app.use(express.json());
 
 app.use("/auth", authRoutes);
+app.use("/profile", profileRoutes);
 
 app.get("/", (req: Request, res: Response) => {
 	res.send("Successfully Connected with Typescript");
