@@ -43,7 +43,7 @@ const getProfile = async (req, res) => {
 exports.getProfile = getProfile;
 const updateProfile = async (req, res) => {
     try {
-        const { username, email, phone, collegeName, skills, course } = req.body;
+        const { username, email, fullName, phone, collegeName, skills, course } = req.body;
         // Validate required fields
         if (!username || !email) {
             res.status(400).json({
@@ -56,6 +56,7 @@ const updateProfile = async (req, res) => {
         let profile = await userProfileModel_1.default.findOne({ username });
         if (profile) {
             // Update existing profile
+            profile.fullName = fullName || profile.fullName;
             profile.phone = phone || profile.phone;
             profile.collegeName = collegeName || profile.collegeName;
             profile.skills = skills || profile.skills;

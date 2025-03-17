@@ -4,7 +4,7 @@ import { UserProfile } from "../types/types";
 
 export const getProfile = async (req: Request, res: Response) => {
   try {
-    const { username }: UserProfile = req.user;
+    const { username } = req.user;
     if (!username) {
       res.status(400).json({
         success: false,
@@ -39,7 +39,8 @@ export const getProfile = async (req: Request, res: Response) => {
 
 export const updateProfile = async (req: Request, res: Response) => {
   try {
-    const { username, email, phone, collegeName, skills, course } = req.body;
+    const { username, email, fullName, phone, collegeName, skills, course }:UserProfile = req.body;
+    
 
     // Validate required fields
     if (!username || !email) {
@@ -55,6 +56,7 @@ export const updateProfile = async (req: Request, res: Response) => {
 
     if (profile) {
       // Update existing profile
+      profile.fullName = fullName || profile.fullName;
       profile.phone = phone || profile.phone;
       profile.collegeName = collegeName || profile.collegeName;
       profile.skills = skills || profile.skills;

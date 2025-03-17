@@ -3,7 +3,8 @@ import { sendVerificationEmail } from '../helpers/sendVerificationMail';
 import { Request, Response } from 'express';
 import UserModel from '../models/userModel';
 import jwt from 'jsonwebtoken';
-import { JwtPayload, User } from '../types/types';
+import { JwtPayload, User, UserProfile } from '../types/types';
+import UserProfileModel from '../models/userProfileModel';
 
 
 export const register = async (req:Request, res:Response) => {
@@ -80,7 +81,7 @@ export const register = async (req:Request, res:Response) => {
 export const verify = async (req:Request, res:Response) => {
     try {
         const {email,otp} = await req.body;
-        console.log(email,otp);
+        // console.log(email,otp);
         const decodedEmail = decodeURIComponent(email);
         const user = await UserModel.findOne({email:decodedEmail});
         if(!user){
@@ -91,10 +92,15 @@ export const verify = async (req:Request, res:Response) => {
         if(isCodeValid && isCodeNotExpired){
            user.isVerified = true;
            await user.save();
+           const userProfile = new UserProfileModel({
+            username:user.username,
+            email:user.email,
+        });
+        await userProfile.save();
            res.status(200).json({message:"User verified",success:true});
         }else if(!isCodeValid){
              res.status(400).json({message:"Invalid code",success:false});}
-           else if(!isCodeNotExpired){
+        else if(!isCodeNotExpired){
                 res.status(400).json({message:"Code expired",success:false});
            }
 
@@ -107,7 +113,7 @@ export const verify = async (req:Request, res:Response) => {
 export const login = async (req:Request, res:Response) => {
     try {
         const { email, password } = req.body;
-        console.log(email,password)
+        // console.log(email,password)
         const user = await UserModel.findOne({ email });
         if (!user) {
               res.status(400).json({

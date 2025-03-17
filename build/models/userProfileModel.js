@@ -25,13 +25,24 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
 const UserProfileSchema = new mongoose_1.Schema({
-    username: { type: String, required: [true, 'Username is required'], trim: true, unique: true },
-    //match matches the email with the regex
-    email: { type: String, required: [true, 'Email is required'], unique: true, match: [/\S+@\S+\.\S+/, 'Please enter a valid email'] },
-    course: { type: String, required: true },
-    phone: { type: String, required: true },
-    collegeName: { type: String },
-    skills: { type: [String], required: true },
+    username: {
+        type: String,
+        required: [true, "Username is required"],
+        trim: true,
+        unique: true,
+    },
+    email: {
+        type: String,
+        required: [true, "Email is required"],
+        unique: true,
+        match: [/\S+@\S+\.\S+/, "Please enter a valid email"],
+    },
+    fullName: { type: String, default: "" },
+    course: { type: String, default: "" },
+    phone: { type: String, default: "" },
+    collegeName: { type: String, default: "" },
+    skills: { type: [String], default: [""] }
 });
-const UserProfileModel = (mongoose_1.default.models.UserProfile) || mongoose_1.default.model('UserProfile', UserProfileSchema);
+const UserProfileModel = mongoose_1.default.models.UserProfile ||
+    mongoose_1.default.model("UserProfile", UserProfileSchema);
 exports.default = UserProfileModel;

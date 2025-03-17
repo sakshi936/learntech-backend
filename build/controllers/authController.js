@@ -8,6 +8,7 @@ const bcryptjs_1 = __importDefault(require("bcryptjs"));
 const sendVerificationMail_1 = require("../helpers/sendVerificationMail");
 const userModel_1 = __importDefault(require("../models/userModel"));
 const jsonwebtoken_1 = __importDefault(require("jsonwebtoken"));
+const userProfileModel_1 = __importDefault(require("../models/userProfileModel"));
 const register = async (req, res) => {
     try {
         const { username, email, password, role } = req.body;
@@ -78,7 +79,7 @@ exports.register = register;
 const verify = async (req, res) => {
     try {
         const { email, otp } = await req.body;
-        console.log(email, otp);
+        // console.log(email,otp);
         const decodedEmail = decodeURIComponent(email);
         const user = await userModel_1.default.findOne({ email: decodedEmail });
         if (!user) {
@@ -89,6 +90,11 @@ const verify = async (req, res) => {
         if (isCodeValid && isCodeNotExpired) {
             user.isVerified = true;
             await user.save();
+            const userProfile = new userProfileModel_1.default({
+                username: user.username,
+                email: user.email,
+            });
+            await userProfile.save();
             res.status(200).json({ message: "User verified", success: true });
         }
         else if (!isCodeValid) {
@@ -107,7 +113,7 @@ exports.verify = verify;
 const login = async (req, res) => {
     try {
         const { email, password } = req.body;
-        console.log(email, password);
+        // console.log(email,password)
         const user = await userModel_1.default.findOne({ email });
         if (!user) {
             res.status(400).json({

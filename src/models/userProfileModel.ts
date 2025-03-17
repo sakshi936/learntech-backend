@@ -14,10 +14,11 @@ const UserProfileSchema: Schema<UserProfile> = new Schema({
     unique: true,
     match: [/\S+@\S+\.\S+/, "Please enter a valid email"],
   },
-  course: { type: String, required: true },
-  phone: { type: String, required: true },
-  collegeName: { type: String, required: true },
-  skills: { type: [String], required: true },
+  fullName:{type:String, default:""},
+  course:{type:String, default:""},
+  phone:{type:String, default:""},
+  collegeName:{type:String, default:""},
+  skills:{type:[String], default:[""]}
 });
 
 const UserProfileModel =

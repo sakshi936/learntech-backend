@@ -28,6 +28,7 @@ export interface Progress{
 export interface UserProfile{
    username: string;
    email: string;
+   fullName:string;
    phone:string;
    collegeName:string;
    skills:string[];
