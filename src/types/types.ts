@@ -1,4 +1,7 @@
+import mongoose, { Document } from "mongoose";
+
 export interface User extends Document {
+   _id: mongoose.Types.ObjectId;
    username: string;
    email: string;
    password: string;
@@ -16,13 +19,21 @@ export interface JwtPayload {
 }
 
 export interface Progress{
-   username: string;
-   roadmapSlug: string;
-   completed: boolean;
-   current: string;
-   lastUpdated: Date;
-   nextTopics: string[];
-   startDate: Date;
+   userId: User['_id'];
+  roadmapSlug: string;
+  completedItems: {
+    [level: string]: {
+      [tech: string]: {
+        [topic: string]: {
+          [item: string]: boolean;
+        };
+      };
+    };
+  };
+  percentage: number;
+  lastUpdated: Date;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface UserProfile{
