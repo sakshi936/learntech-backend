@@ -20,6 +20,7 @@ const getAllRoadmaps = async (req, res) => {
 };
 exports.getAllRoadmaps = getAllRoadmaps;
 // Get roadmap by slug
+//currently not used in the frontend, but let's keep it
 const getRoadmapBySlug = async (req, res) => {
     try {
         const { slug } = req.params;
