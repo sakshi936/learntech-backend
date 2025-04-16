@@ -28,7 +28,7 @@ export const uploadBlog = async (req: Request, res: Response): Promise<void> => 
 
 		await newBlog.save();
 
-		console.log(newBlog);
+		// console.log(newBlog);
 
 		res.status(201).json({
 			message: "Blog created successfully",

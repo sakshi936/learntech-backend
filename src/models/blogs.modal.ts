@@ -14,7 +14,7 @@ const blogSchema = new mongoose.Schema(
 
 		mediaType: {
 			type: String, // 'image', 'text' or 'video'
-
+			enum: [ "text", "video"],
 			required: true,
 		},
 
