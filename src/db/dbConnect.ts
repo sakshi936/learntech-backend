@@ -1,3 +1,4 @@
+
 import mongoose, { Mongoose } from "mongoose";
 
 // Global connection cache for serverless environments(vercel, netlify, etc.)
