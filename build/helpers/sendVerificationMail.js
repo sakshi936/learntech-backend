@@ -14,7 +14,9 @@ async function sendVerificationEmail(email, username, verifyCode) {
             from: `LearnTech <${process.env.EMAIL_USER}>`,
             to: email,
             subject: 'LearnTech Verification Code',
-            html: `<strong>hello ${username} <br/> Verificaton Code : ${verifyCode}</strong>`,
+            html: `<strong>hello ${username} <br/> Verificaton Code : ${verifyCode}</strong>
+            <p>This code will expire in 1 hour.</p>
+            `,
         });
         return { success: true, message: "Verification email sent" };
     }

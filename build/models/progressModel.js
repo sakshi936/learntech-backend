@@ -22,8 +22,14 @@ var __importStar = (this && this.__importStar) || function (mod) {
     __setModuleDefault(result, mod);
     return result;
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = __importStar(require("mongoose"));
+const roadmapModel_1 = __importDefault(require("./roadmapModel"));
+const fs_1 = __importDefault(require("fs"));
+const path_1 = __importDefault(require("path"));
 const ProgressSchema = new mongoose_1.Schema({
     userId: {
         type: mongoose_1.Schema.Types.ObjectId,
@@ -50,26 +56,52 @@ const ProgressSchema = new mongoose_1.Schema({
     }
 }, { timestamps: true });
 // Pre-save middleware to calculate percentage
-ProgressSchema.pre('save', function (next) {
-    const progress = this;
-    let totalItems = 0;
-    let completedCount = 0;
-    // Count total items and completed items
-    for (const level in progress.completedItems) {
-        for (const tech in progress.completedItems[level]) {
-            for (const topic in progress.completedItems[level][tech]) {
-                for (const item in progress.completedItems[level][tech][topic]) {
-                    totalItems++;
-                    if (progress.completedItems[level][tech][topic][item]) {
-                        completedCount++;
+ProgressSchema.pre('save', async function (next) {
+    try {
+        const progress = this;
+        // Get the roadmap data based on the slug
+        const roadmap = await roadmapModel_1.default.findOne({ slug: progress.roadmapSlug });
+        if (!roadmap) {
+            // If roadmap not found, proceed without changing percentage
+            next();
+            return;
+        }
+        const filePath = path_1.default.join(process.cwd(), 'src', 'data', 'roadmaps', `${roadmap.slug}.json`);
+        if (!fs_1.default.existsSync(filePath)) {
+            throw new Error(`Roadmap structure file not found: ${filePath}`);
+        }
+        const structureData = JSON.parse(fs_1.default.readFileSync(filePath, 'utf8'));
+        let totalItems = 0;
+        let completedCount = 0;
+        // Count total items from roadmap data
+        // The structure is of nested objects, with levels as object keys instead of array items
+        for (const levelName of Object.keys(structureData)) {
+            const technologies = structureData[levelName];
+            for (const techName of Object.keys(technologies)) {
+                const difficulties = technologies[techName];
+                for (const difficultyName of Object.keys(difficulties)) {
+                    // Skip non-array properties (like 'Note')
+                    if (Array.isArray(difficulties[difficultyName])) {
+                        const items = difficulties[difficultyName];
+                        for (const item of items) {
+                            totalItems++;
+                            // Check if this item is completed in user's progress
+                            const isCompleted = progress.completedItems?.[levelName]?.[techName]?.[difficultyName]?.[item] === true;
+                            if (isCompleted) {
+                                completedCount++;
+                            }
+                        }
                     }
                 }
             }
         }
+        progress.percentage = totalItems > 0 ? Math.round((completedCount / totalItems) * 100) : 0;
+        progress.lastUpdated = new Date();
+        next();
     }
-    progress.percentage = totalItems > 0 ? Math.round((completedCount / totalItems) * 100) : 0;
-    progress.lastUpdated = new Date();
-    next();
+    catch (error) {
+        next(error);
+    }
 });
 const ProgressModel = (mongoose_1.default.models.Progress) || mongoose_1.default.model('Progress', ProgressSchema);
 exports.default = ProgressModel;

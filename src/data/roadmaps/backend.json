@@ -1,0 +1,99 @@
+{
+   "Level 1": {
+     "Node.js": {
+       "Beginner": ["Basic Syntax", "Modules", "Events"],
+       "Intermediate": ["File System", "Streams", "Buffer"],
+       "Advanced": ["Async/Await", "Promises", "Error Handling"]
+     },
+     "Express.js": {
+       "Beginner": ["Basic Routing", "Request/Response", "Middleware"],
+       "Intermediate": ["Error Handling", "Authentication", "Authorization"],
+       "Advanced": ["Routing", "Middleware", "Performance Optimization"]
+     }
+   },
+   "Level 2": {
+     "Databases": {
+       "Beginner": ["Basic CRUD", "SQL vs NoSQL", "Database Models"],
+       "Intermediate": ["Querying", "Indexing", "Caching"],
+       "Advanced": [
+         "Database Design",
+         "Database Security",
+         "Database Performance"
+       ]
+     },
+     "Cloud Services": {
+       "Beginner": ["Basic Cloud", "Cloud Providers", "Cloud Storage"],
+       "Intermediate": [
+         "Cloud Security",
+         "Cloud Cost Optimization",
+         "Cloud Scalability"
+       ],
+       "Advanced": [
+         "Cloud Architecture",
+         "Cloud Migration",
+         "Cloud Disaster Recovery"
+       ]
+     }
+   },
+   "Level 3": {
+     "APIs": {
+       "Beginner": ["Basic API", "API Design", "API Security"],
+       "Intermediate": ["API Performance", "API Testing", "API Documentation"],
+       "Advanced": ["API Gateway", "API Management", "API Security"]
+     },
+     "Microservices": {
+       "Beginner": [
+         "Basic Microservices",
+         "Microservices Architecture",
+         "Microservices Communication"
+       ],
+       "Intermediate": [
+         "Microservices Security",
+         "Microservices Testing",
+         "Microservices Deployment"
+       ],
+       "Advanced": [
+         "Microservices Design",
+         "Microservices Performance",
+         "Microservices Scalability"
+       ]
+     }
+   },
+   "Level 4": {
+     "DevOps": {
+       "Beginner": ["Basic DevOps", "DevOps Tools", "DevOps Practices"],
+       "Intermediate": [
+         "DevOps Automation",
+         "DevOps Security",
+         "DevOps Monitoring"
+       ],
+       "Advanced": [
+         "DevOps Architecture",
+         "DevOps Optimization",
+         "DevOps Innovation"
+       ]
+     },
+     "Cloud Native": {
+       "Beginner": [
+         "Basic Cloud Native",
+         "Cloud Native Architecture",
+         "Cloud Native Development"
+       ],
+       "Intermediate": [
+         "Cloud Native Security",
+         "Cloud Native Testing",
+         "Cloud Native Deployment"
+       ],
+       "Advanced": [
+         "Cloud Native Design",
+         "Cloud Native Performance",
+         "Cloud Native Scalability"
+       ]
+     }
+   },
+   "Extras": {
+     "Containerization": {
+       "Beginner": ["Basic Docker", "Docker Commands", "Dockerfile"]
+   }
+ }
+}
