@@ -1,10 +1,10 @@
-// src/routes/progressRoutes.ts
 import express from 'express';
 import { 
   getProgress, 
   updateProgress, 
   getAllProgress,
-  getProgressStats
+  getProgressStats,
+  getRecommendations
 } from '../controllers/progressController';
 import { authenticateToken } from '../middleware/authenticateToken';
 
@@ -15,6 +15,9 @@ router.get('/all', authenticateToken, getAllProgress);
 
 router.get('/stats', authenticateToken, getProgressStats);
 
+router.get('/recommendations', authenticateToken, getRecommendations);
+
+//dynamic routes should be in the end
 router.get('/:roadmapSlug', authenticateToken, getProgress);
 
 router.post('/:roadmapSlug', authenticateToken, updateProgress);
