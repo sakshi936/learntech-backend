@@ -8,9 +8,9 @@ const progressModel_1 = __importDefault(require("../models/progressModel"));
 const roadmapModel_1 = __importDefault(require("../models/roadmapModel"));
 const path_1 = __importDefault(require("path"));
 const fs_1 = __importDefault(require("fs"));
-//For cacheing the roadmap structure
+// For Cacheing roadmap structure data
 const roadmapStructureCache = {};
-const CACHE_EXPIRY = 24 * 60 * 60 * 1000;
+const CACHE_EXPIRY = 24 * 60 * 60 * 1000; // 24 hours in milliseconds
 // Get progress for a specific roadmap
 const getProgress = async (req, res) => {
     try {
@@ -154,10 +154,8 @@ const getRecommendations = async (req, res) => {
     const startTime = Date.now();
     try {
         const userId = req.user.userId;
-        // Set cache headers to enable client-side caching for 5 minutes
-        res.setHeader('Cache-Control', 'private, max-age=300');
-        // Get all user progress records - but only fetch the fields we need
-        const progressRecords = await progressModel_1.default.find({ userId }, { roadmapSlug: 1, completedItems: 1, percentage: 1, lastUpdated: 1 }).sort({ lastUpdated: -1 }).lean(); // Use lean() for faster queries
+        // Get all user progress records - only fetch what we need
+        const progressRecords = await progressModel_1.default.find({ userId }, { roadmapSlug: 1, completedItems: 1, percentage: 1, lastUpdated: 1 }).sort({ lastUpdated: -1 }).lean();
         if (!progressRecords || progressRecords.length === 0) {
             return res.status(200).json({
                 success: true,
@@ -166,8 +164,7 @@ const getRecommendations = async (req, res) => {
                     lastCompleted: null,
                     recommendations: [
                         { level: "Level 1", tech: "HTML", topic: "Beginner", item: "Basic Tags", roadmapSlug: "frontend-development", roadmapTitle: "Frontend Development" },
-                        { level: "Level 1", tech: "CSS", topic: "Beginner", item: "Selectors", roadmapSlug: "frontend-development", roadmapTitle: "Frontend Development" },
-                        { level: "Level 1", tech: "JavaScript Basics", topic: "Beginner", item: "Variables", roadmapSlug: "frontend-development", roadmapTitle: "Frontend Development" }
+                        { level: "Level 1", tech: "CSS", topic: "Beginner", item: "Selectors", roadmapSlug: "frontend-development", roadmapTitle: "Frontend Development" }
                     ],
                     message: "Start your journey with these fundamentals!"
                 }
@@ -185,209 +182,171 @@ const getRecommendations = async (req, res) => {
         const activeRoadmaps = progressRecords.filter(p => p.completedItems &&
             Object.keys(p.completedItems).length > 0 &&
             p.percentage < 100);
-        let mostRecentRecommendations = [];
-        let lastCompleted = null;
-        let recentRoadmapPercentage = 0;
-        // Performance optimization: Set a timeout to prevent long-running operations
-        const TIMEOUT = 3000; // 3 seconds timeout
-        const timeoutPromise = new Promise((_, reject) => setTimeout(() => reject(new Error('Recommendation generation timed out')), TIMEOUT));
-        // Main recommendation logic
-        const recommendationPromise = (async () => {
-            if (activeRoadmaps.length > 0) {
-                const mostRecentProgress = activeRoadmaps[0];
-                recentRoadmapPercentage = mostRecentProgress.percentage;
-                // Get roadmap structure for analysis (with caching)
-                const roadmapSlug = mostRecentProgress.roadmapSlug;
-                let structureData;
-                // Check cache first
-                if (roadmapStructureCache[roadmapSlug] &&
-                    roadmapStructureCache[roadmapSlug].timestamp > Date.now() - CACHE_EXPIRY) {
-                    structureData = roadmapStructureCache[roadmapSlug].data;
+        if (activeRoadmaps.length === 0) {
+            return res.status(200).json({
+                success: true,
+                data: {
+                    activeRoadmaps: 0,
+                    lastCompleted: null,
+                    recommendations: [
+                        { level: "Level 1", tech: "HTML", topic: "Beginner", item: "Basic Tags", roadmapSlug: "frontend-development", roadmapTitle: "Frontend Development" },
+                        { level: "Level 1", tech: "CSS", topic: "Beginner", item: "Selectors", roadmapSlug: "frontend-development", roadmapTitle: "Frontend Development" }
+                    ],
+                    message: "Start your journey with these fundamentals!"
                 }
-                else {
-                    // Read from file if not in cache
-                    const filePath = path_1.default.join(process.cwd(), 'src', 'data', 'roadmaps', `${roadmapSlug}.json`);
-                    if (fs_1.default.existsSync(filePath)) {
-                        structureData = JSON.parse(fs_1.default.readFileSync(filePath, 'utf8'));
-                        // Store in cache
-                        roadmapStructureCache[roadmapSlug] = {
-                            data: structureData,
-                            timestamp: Date.now()
-                        };
-                    }
-                    else {
-                        console.error(`File not found: ${filePath}`);
-                        return {
-                            error: true,
-                            message: 'Roadmap structure file not found'
-                        };
-                    }
-                }
-                // Optimize: Store flattened completed items for faster access
-                // Instead of deeply nested loops, we create a flattened version once
-                const flatCompletedItems = [];
-                const flattener = (obj, parentPath = [], result = []) => {
-                    if (!obj || typeof obj !== 'object')
-                        return result;
-                    if (Object.keys(obj).length === 0)
-                        return result;
-                    Object.entries(obj).forEach(([key, value]) => {
-                        const currentPath = [...parentPath, key];
-                        if (value === true) {
-                            // This is a completed item
-                            const [level, tech, topic, item] = currentPath;
-                            if (level && tech && topic && item) {
-                                result.push({
-                                    level,
-                                    tech,
-                                    topic,
-                                    item,
-                                    roadmapSlug,
-                                    roadmapTitle: roadmapTitles[roadmapSlug] || roadmapSlug,
-                                    levelOrder: Object.keys(structureData).indexOf(level),
-                                    techOrder: Object.keys(structureData[level] || {}).indexOf(tech)
-                                });
-                            }
-                        }
-                        else if (typeof value === 'object') {
-                            // Continue traversing the object
-                            flattener(value, currentPath, result);
-                        }
-                    });
-                    return result;
-                };
-                flattener(mostRecentProgress.completedItems, [], flatCompletedItems);
-                // Sort and get most recent completed item
-                if (flatCompletedItems.length > 0) {
-                    flatCompletedItems.sort((a, b) => {
-                        if (a.levelOrder !== b.levelOrder)
-                            return b.levelOrder - a.levelOrder;
-                        return b.techOrder - a.techOrder;
-                    });
-                    lastCompleted = flatCompletedItems[0];
-                    // Helper to check if item is completed - using a Set for O(1) lookups
-                    const completedItemsSet = new Set();
-                    flatCompletedItems.forEach((item) => {
-                        const key = `${item.level}|${item.tech}|${item.topic}|${item.item}`;
-                        completedItemsSet.add(key);
-                    });
-                    const isCompleted = (level, tech, topic, item) => {
-                        const key = `${level}|${tech}|${topic}|${item}`;
-                        return completedItemsSet.has(key);
-                    };
-                    // Get recommendations with more efficient logic
-                    const getRecommendationsForRoadmap = (structureData, lastCompleted) => {
-                        const recommendations = [];
-                        // Get next items in current topic
-                        const currentTech = structureData[lastCompleted.level]?.[lastCompleted.tech];
-                        if (currentTech) {
-                            const topicItems = currentTech[lastCompleted.topic];
-                            if (Array.isArray(topicItems)) {
-                                for (const item of topicItems) {
-                                    const itemText = typeof item === 'string' ? item : item.name || item.text || Object.keys(item)[0];
-                                    if (!isCompleted(lastCompleted.level, lastCompleted.tech, lastCompleted.topic, itemText)) {
-                                        recommendations.push({
-                                            level: lastCompleted.level,
-                                            tech: lastCompleted.tech,
-                                            topic: lastCompleted.topic,
-                                            item: itemText,
-                                            roadmapSlug,
-                                            roadmapTitle: roadmapTitles[roadmapSlug] || roadmapSlug
-                                        });
-                                        if (recommendations.length >= 3)
-                                            break;
-                                    }
-                                }
-                            }
-                        }
-                        return recommendations;
-                    };
-                    mostRecentRecommendations = getRecommendationsForRoadmap(structureData, lastCompleted);
-                }
-            }
-            // If we need more recommendations, get from other active roadmaps
-            // Only execute this if we need more and have other roadmaps
-            const recommendationsNeeded = 3 - mostRecentRecommendations.length;
-            if (recommendationsNeeded > 0 && activeRoadmaps.length > 1) {
-                // Process at most 2 additional roadmaps to limit processing time
-                const roadmapsToProcess = Math.min(2, activeRoadmaps.length - 1);
-                for (let i = 1; i <= roadmapsToProcess && mostRecentRecommendations.length < 3; i++) {
-                    const otherProgress = activeRoadmaps[i];
-                    const roadmapSlug = otherProgress.roadmapSlug;
-                    // Use cached structure data if available
-                    let structureData;
-                    if (roadmapStructureCache[roadmapSlug] &&
-                        roadmapStructureCache[roadmapSlug].timestamp > Date.now() - CACHE_EXPIRY) {
-                        structureData = roadmapStructureCache[roadmapSlug].data;
-                    }
-                    else {
-                        const filePath = path_1.default.join(process.cwd(), 'src', 'data', 'roadmaps', `${roadmapSlug}.json`);
-                        if (fs_1.default.existsSync(filePath)) {
-                            structureData = JSON.parse(fs_1.default.readFileSync(filePath, 'utf8'));
-                            roadmapStructureCache[roadmapSlug] = {
-                                data: structureData,
-                                timestamp: Date.now()
-                            };
-                        }
-                        else {
-                            continue; // Skip this roadmap if file not found
-                        }
-                    }
-                    // Find first incomplete item more efficiently
-                    // Instead of nested loops, implement early exit and chunking
-                    outerLoop: for (const level in structureData) {
-                        for (const tech in structureData[level]) {
-                            for (const topic in structureData[level][tech]) {
-                                if (Array.isArray(structureData[level][tech][topic])) {
-                                    // Only check first 5 items in each topic to improve performance
-                                    const itemsToCheck = structureData[level][tech][topic].slice(0, 5);
-                                    for (const item of itemsToCheck) {
-                                        const itemText = typeof item === 'string' ? item : item.name || item.text || Object.keys(item)[0];
-                                        // Check if this item is not completed
-                                        if (!otherProgress.completedItems?.[level]?.[tech]?.[topic]?.[itemText]) {
-                                            mostRecentRecommendations.push({
-                                                level,
-                                                tech,
-                                                topic,
-                                                item: itemText,
-                                                roadmapSlug,
-                                                roadmapTitle: roadmapTitles[roadmapSlug] || roadmapSlug
-                                            });
-                                            if (mostRecentRecommendations.length >= 3) {
-                                                break outerLoop; // Break out of all loops
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            return {
-                error: false
-            };
-        })();
-        // Execute with timeout protection
-        try {
-            const result = await Promise.race([recommendationPromise, timeoutPromise]);
-            if (result && result.error) {
-                return res.status(404).json({ success: false, message: result.message });
-            }
+            });
         }
-        catch (timeoutError) {
-            console.warn('Recommendation generation timed out, using simple recommendations');
-            // If timeout occurs, provide simple recommendations
-            if (mostRecentRecommendations.length === 0) {
-                mostRecentRecommendations = activeRoadmaps.slice(0, 3).map(p => ({
+        // Take the most recent active roadmap
+        const mostRecentProgress = activeRoadmaps[0];
+        const roadmapSlug = mostRecentProgress.roadmapSlug;
+        const roadmapTitle = roadmapTitles[roadmapSlug] || roadmapSlug;
+        const recentRoadmapPercentage = mostRecentProgress.percentage || 0;
+        // Find the last completed item
+        let lastCompleted = null;
+        const recommendations = [];
+        // Simple function to find the last completed item
+        const findLastCompletedItem = (obj, path = []) => {
+            if (!obj || typeof obj !== 'object')
+                return;
+            // Sort keys to ensure we get items in correct order
+            const keys = Object.keys(obj);
+            // Process in reverse to prioritize later items
+            for (let i = keys.length - 1; i >= 0; i--) {
+                const key = keys[i];
+                const value = obj[key];
+                const currentPath = [...path, key];
+                if (value === true) {
+                    // Found a completed item
+                    if (currentPath.length >= 4) { // [level, tech, topic, item]
+                        const [level, tech, topic, item] = currentPath;
+                        // If we don't have a lastCompleted yet, set it
+                        if (!lastCompleted) {
+                            lastCompleted = {
+                                level, tech, topic, item,
+                                roadmapSlug,
+                                roadmapTitle
+                            };
+                            return true; // Found it
+                        }
+                    }
+                }
+                else if (typeof value === 'object') {
+                    // Continue traversing
+                    if (findLastCompletedItem(value, currentPath)) {
+                        return true; // Found in deeper level
+                    }
+                }
+            }
+            return false;
+        };
+        findLastCompletedItem(mostRecentProgress.completedItems);
+        // Get roadmap structure from file system with basic caching
+        let structureData;
+        if (roadmapStructureCache[roadmapSlug] &&
+            roadmapStructureCache[roadmapSlug].timestamp > Date.now() - CACHE_EXPIRY) {
+            structureData = roadmapStructureCache[roadmapSlug].data;
+        }
+        else {
+            // Read from file if not in cache
+            const filePath = path_1.default.join(process.cwd(), 'src', 'data', 'roadmaps', `${roadmapSlug}.json`);
+            if (fs_1.default.existsSync(filePath)) {
+                structureData = JSON.parse(fs_1.default.readFileSync(filePath, 'utf8'));
+                roadmapStructureCache[roadmapSlug] = {
+                    data: structureData,
+                    timestamp: Date.now()
+                };
+            }
+            else {
+                // If file not found, just create a basic recommendation
+                recommendations.push({
                     level: "Continue with",
                     tech: "",
                     topic: "",
-                    item: roadmapTitles[p.roadmapSlug] || p.roadmapSlug,
-                    roadmapSlug: p.roadmapSlug,
-                    roadmapTitle: roadmapTitles[p.roadmapSlug] || p.roadmapSlug
-                }));
+                    item: roadmapTitle,
+                    roadmapSlug,
+                    roadmapTitle
+                });
             }
+        }
+        // If we have both last completed item and structure data, find next topics
+        if (lastCompleted && structureData) {
+            const { level, tech, topic, item } = lastCompleted;
+            // Helper to get 1-2 recommendations in the same topic
+            const findNextItemsInTopic = () => {
+                // Check if the level, tech, and topic exist in structure
+                if (structureData[level]?.[tech]?.[topic] && Array.isArray(structureData[level][tech][topic])) {
+                    const topicItems = structureData[level][tech][topic];
+                    // Find index of current item
+                    let currentIndex = -1;
+                    for (let i = 0; i < topicItems.length; i++) {
+                        const itemText = typeof topicItems[i] === 'string' ?
+                            topicItems[i] :
+                            topicItems[i].name || topicItems[i].text || Object.keys(topicItems[i])[0];
+                        if (itemText === item) {
+                            currentIndex = i;
+                            break;
+                        }
+                    }
+                    // Get next 1-2 items
+                    if (currentIndex !== -1 && currentIndex < topicItems.length - 1) {
+                        for (let i = currentIndex + 1; i < topicItems.length && recommendations.length < 2; i++) {
+                            const nextItem = topicItems[i];
+                            const nextItemText = typeof nextItem === 'string' ?
+                                nextItem :
+                                nextItem.name || nextItem.text || Object.keys(nextItem)[0];
+                            recommendations.push({
+                                level,
+                                tech,
+                                topic,
+                                item: nextItemText,
+                                roadmapSlug,
+                                roadmapTitle
+                            });
+                        }
+                    }
+                }
+            };
+            // Helper to find next topic in the same tech
+            const findNextTopic = () => {
+                if (recommendations.length >= 2)
+                    return; // Already have enough
+                if (structureData[level]?.[tech]) {
+                    const topics = Object.keys(structureData[level][tech]);
+                    const currentTopicIndex = topics.indexOf(topic);
+                    if (currentTopicIndex !== -1 && currentTopicIndex < topics.length - 1) {
+                        const nextTopic = topics[currentTopicIndex + 1];
+                        if (Array.isArray(structureData[level][tech][nextTopic]) &&
+                            structureData[level][tech][nextTopic].length > 0) {
+                            const firstItem = structureData[level][tech][nextTopic][0];
+                            const itemText = typeof firstItem === 'string' ?
+                                firstItem :
+                                firstItem.name || firstItem.text || Object.keys(firstItem)[0];
+                            recommendations.push({
+                                level,
+                                tech,
+                                topic: nextTopic,
+                                item: itemText,
+                                roadmapSlug,
+                                roadmapTitle
+                            });
+                        }
+                    }
+                }
+            };
+            // Get next items in order of priority
+            findNextItemsInTopic();
+            findNextTopic();
+        }
+        // If we still need recommendations, add a generic one
+        if (recommendations.length === 0) {
+            recommendations.push({
+                level: "Continue with",
+                tech: "",
+                topic: "",
+                item: roadmapTitle,
+                roadmapSlug,
+                roadmapTitle
+            });
         }
         // Generate motivational message
         let message = "";
@@ -400,29 +359,28 @@ const getRecommendations = async (req, res) => {
         else if (recentRoadmapPercentage < 75) {
             message = "You're well on your way to mastery! Tackle these topics next.";
         }
-        else if (recentRoadmapPercentage < 100) {
+        else {
             message = "You're almost there! Just a few more topics to complete your journey.";
         }
-        else {
-            message = "Try exploring a new roadmap to continue your learning journey!";
-        }
-        const responseData = {
+        const endTime = Date.now();
+        // console.log(`Simplified recommendations generated in ${endTime - startTime}ms`);
+        return res.status(200).json({
             success: true,
             data: {
                 activeRoadmaps: activeRoadmaps.length,
                 lastCompleted,
-                recommendations: mostRecentRecommendations,
+                recommendations,
                 message
             }
-        };
-        const endTime = Date.now();
-        console.log(`Recommendations generated in ${endTime - startTime}ms`);
-        return res.status(200).json(responseData);
+        });
     }
     catch (error) {
         const endTime = Date.now();
         console.error(`Error generating recommendations in ${endTime - startTime}ms:`, error);
-        res.status(500).json({ success: false, message: 'Error generating recommendations' });
+        return res.status(500).json({
+            success: false,
+            message: 'Error generating recommendations'
+        });
     }
 };
 exports.getRecommendations = getRecommendations;

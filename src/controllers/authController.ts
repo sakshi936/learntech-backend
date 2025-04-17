@@ -115,7 +115,6 @@ export const verify = async (req: Request, res: Response) => {
 export const login = async (req: Request, res: Response) => {
   try {
     const { email, password } = req.body;
-    // console.log(email, password);
     const user = await UserModel.findOne({ email });
     if (!user) {
       res.status(400).json({
