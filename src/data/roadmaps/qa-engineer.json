@@ -1,0 +1,246 @@
+{
+   "Level 1: Foundations": {
+     "Software Testing Fundamentals": {
+       "Beginner": [
+         "What is Software Testing?",
+         "Why is Testing Important?",
+         "Different Types of Testing (Manual vs. Automation, Functional vs. Non-Functional)",
+         "Software Development Life Cycle (SDLC) and the Role of QA"
+       ],
+       "Intermediate": [
+         "Software Testing Principles",
+         "Test Levels (Unit, Integration, System, Acceptance)",
+         "Test Design Techniques (Boundary Value Analysis, Equivalence Partitioning)",
+         "Understanding Test Plans and Test Cases"
+       ],
+       "Advanced": [
+         "Risk-Based Testing",
+         "Exploratory Testing",
+         "Test Management Tools (e.g., Jira, TestRail)",
+         "Metrics and Reporting in QA"
+       ]
+     },
+     "Basic Technical Skills": {
+       "Beginner": [
+         "Understanding of Operating Systems (Windows, Linux)",
+         "Basic Computer Navigation and File Management",
+         "Introduction to Command Line Interface (CLI)"
+       ],
+       "Intermediate": [
+         "Working with Logs and System Information",
+         "Basic Understanding of Databases (SQL - SELECT queries)",
+         "Introduction to APIs (Understanding HTTP Methods)",
+         "Version Control Systems (Git - Basic Commands)"
+       ],
+       "Advanced": [
+         "Scripting Basics (e.g., Python, JavaScript) for Test Automation",
+         "Understanding of Network Concepts",
+         "Basic Understanding of Cloud Environments",
+         "Performance Monitoring Tools"
+       ]
+     },
+     "Quality Assurance Principles": {
+       "Beginner": [
+         "What is Quality Assurance?",
+         "Difference between QA and Testing",
+         "Importance of Process and Standards"
+       ],
+       "Intermediate": [
+         "Understanding Quality Management Systems",
+         "Process Improvement Methodologies",
+         "Defect Management Lifecycle",
+         "Root Cause Analysis"
+       ],
+       "Advanced": [
+         "Quality Audits",
+         "Compliance and Regulatory Standards",
+         "Building a Culture of Quality",
+         "Continuous Improvement in QA"
+       ]
+     }
+   },
+   "Level 2: Core Testing Skills": {
+     "Manual Testing Expertise": {
+       "Beginner": [
+         "Writing Basic Test Cases",
+         "Executing Test Cases Effectively",
+         "Identifying and Reporting Defects Clearly"
+       ],
+       "Intermediate": [
+         "Designing Comprehensive Test Scenarios",
+         "Performing Different Types of Manual Testing (Functional, Regression, Usability)",
+         "Creating Effective Bug Reports with Reproducible Steps"
+       ],
+       "Advanced": [
+         "Mastering Exploratory Testing Techniques",
+         "Performing End-to-End Testing",
+         "Leading Manual Testing Efforts",
+         "Providing Constructive Feedback on User Experience"
+       ]
+     },
+     "Introduction to Test Automation": {
+       "Beginner": [
+         "What is Test Automation?",
+         "Benefits and Drawbacks of Automation",
+         "Introduction to Automation Frameworks and Tools (e.g., Selenium, Cypress, Playwright - Overview)"
+       ],
+       "Intermediate": [
+         "Writing Basic Automation Scripts",
+         "Locators (XPath, CSS Selectors)",
+         "Working with Test Automation Frameworks",
+         "Test Data Management in Automation"
+       ],
+       "Advanced": [
+         "Designing and Implementing Automation Frameworks",
+         "Integrating Automation with CI/CD Pipelines",
+         "Performance Testing with Automation Tools (e.g., JMeter, LoadRunner - Basic)",
+         "Mobile Test Automation (Basic)"
+       ]
+     },
+     "API Testing": {
+       "Beginner": [
+         "What is API Testing?",
+         "Understanding API Documentation (e.g., Swagger)",
+         "Introduction to API Testing Tools (e.g., Postman, RestAssured)"
+       ],
+       "Intermediate": [
+         "Writing API Test Cases",
+         "Validating API Responses (Status Codes, Data)",
+         "Using API Testing Tools Effectively",
+         "Understanding Different API Architectures (REST, SOAP - Basic)"
+       ],
+       "Advanced": [
+         "Automating API Tests",
+         "Performance Testing of APIs",
+         "Security Testing of APIs",
+         "Contract Testing"
+       ]
+     }
+   },
+   "Level 3: Specializations and Advanced Topics": {
+     "Performance Testing": {
+       "Beginner": [
+         "What is Performance Testing?",
+         "Different Types of Performance Testing (Load, Stress, Soak)"
+       ],
+       "Intermediate": [
+         "Using Performance Testing Tools (JMeter, LoadRunner - Intermediate)",
+         "Identifying Performance Bottlenecks",
+         "Analyzing Performance Test Results"
+       ],
+       "Advanced": [
+         "Designing Complex Performance Test Scenarios",
+         "Performance Monitoring and Tuning",
+         "Distributed Performance Testing",
+         "Cloud-Based Performance Testing"
+       ]
+     },
+     "Security Testing": {
+       "Beginner": [
+         "Introduction to Security Testing Concepts",
+         "Common Web Vulnerabilities (OWASP Top 10 - Awareness)"
+       ],
+       "Intermediate": [
+         "Performing Basic Security Tests (e.g., Input Validation Checks)",
+         "Using Basic Security Testing Tools (e.g., OWASP ZAP - Basic)",
+         "Understanding Different Security Testing Types (SAST, DAST - Basic)"
+       ],
+       "Advanced": [
+         "Performing Penetration Testing",
+         "Security Audits",
+         "Automating Security Tests",
+         "Mobile Security Testing"
+       ]
+     },
+     "Mobile Testing": {
+       "Beginner": [
+         "Understanding Mobile Operating Systems (Android, iOS)",
+         "Basic Mobile App Testing Concepts"
+       ],
+       "Intermediate": [
+         "Manual Testing on Mobile Devices and Simulators/Emulators",
+         "Introduction to Mobile Automation Tools (e.g., Appium)",
+         "Mobile-Specific Testing Challenges (Fragmentation, Network Conditions)"
+       ],
+       "Advanced": [
+         "Automating Mobile Tests on Native, Hybrid, and Web Apps",
+         "Performance Testing on Mobile",
+         "Security Testing on Mobile",
+         "Cloud-Based Mobile Testing"
+       ]
+     },
+     "Data Testing and Validation": {
+       "Beginner": [
+         "Importance of Data Quality",
+         "Basic Data Validation Concepts"
+       ],
+       "Intermediate": [
+         "Writing SQL Queries for Data Validation",
+         "Testing ETL Processes",
+         "Validating Data Integrity and Accuracy"
+       ],
+       "Advanced": [
+         "Big Data Testing",
+         "Data Warehousing Testing",
+         "Data Governance and Compliance Testing",
+         "Automating Data Validation"
+       ]
+     }
+   },
+   "Level 4: Leadership and Emerging Trends": {
+     "Management and Leadership": {
+       "Beginner": ["Understanding Team Dynamics in QA"],
+       "Intermediate": [
+         "Leading Small QA Teams",
+         "Test Planning and Estimation",
+         "Mentoring Junior QA Engineers"
+       ],
+       "Advanced": [
+         "Managing Large QA Teams",
+         "Defining QA Strategy and Vision",
+         "Implementing Process Improvements",
+         "Vendor Management"
+       ]
+     },
+     "Framework Design": {
+       "Beginner": ["Basic Understanding of Automation Framework Components"],
+       "Intermediate": [
+         "Designing Scalable and Maintainable Automation Frameworks",
+         "Choosing the Right Automation Tools and Technologies",
+         "Integrating Different Automation Layers"
+       ],
+       "Advanced": [
+         "Developing Custom Automation Frameworks",
+         "Implementing Advanced Design Patterns in Automation",
+         "Performance Optimization of Automation Suites"
+       ]
+     },
+     "DevOps": {
+       "Beginner": ["Understanding the Role of QA in DevOps"],
+       "Intermediate": [
+         "Integrating Testing into CI/CD Pipelines",
+         "Implementing Shift-Left Testing",
+         "Understanding Infrastructure as Code (IaC) from a QA Perspective"
+       ],
+       "Advanced": [
+         "Building Quality Gates in CI/CD",
+         "Implementing Continuous Testing Strategies",
+         "Contributing to DevOps Culture and Practices"
+       ]
+     },
+     "Emerging Trends in QA": {
+       "Beginner": [
+         "Awareness of AI/ML in Testing, IoT Testing, Blockchain Testing"
+       ],
+       "Intermediate": [
+         "Understanding the Concepts and Challenges of Testing Emerging Technologies",
+         "Exploring New Testing Tools and Methodologies"
+       ],
+       "Advanced": [
+         "Implementing AI/ML-Powered Testing Solutions",
+         "Developing Testing Strategies for Emerging Technologies",
+         "Contributing to Research and Innovation in QA"
+       ]
+     }
+   }
+ }

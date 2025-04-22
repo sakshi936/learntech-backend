@@ -1,78 +1,140 @@
 {
-   "Level 1": {
-     "HTML": {
-       "Beginner": ["Basic Tags,", "div", "section", "body"],
-       "Intermediate": ["Semantic tags", "Meta Data"],
-       "Advanced": ["Forms", "Tables"]
-     },
-     "CSS": {
-       "Beginner": ["Selectors", "Properties", "Values"],
-       "Intermediate": ["Layout", "Flexbox"],
-       "Advanced": ["Grid", "Responsive Design"]
-     },
-     "JavaScript Basics": {
-       "Beginner": ["Variables", "Data Types", "Functions"],
-       "Intermediate": ["Loops", "Conditional Statements", "Arrays"],
-       "Advanced": ["Object-Oriented Programming", "Async/Await", "API Calls"]
-     }
-   },
-   "Level 2": {
-     "Advanced JavaScript": {
-       "Beginner": ["Async/Await", "API Calls"],
-       "Intermediate": ["Object-Oriented Programming", "DOM Manipulation"],
-       "Advanced": ["Web Storage", "Web Workers"]
-     },
-     "TypeScript": {
-       "Beginner": ["Basic Syntax", "Type Annotations"],
-       "Intermediate": ["Type Inference", "Generics"],
-       "Advanced": ["Type Guards", "Conditional Types"]
-     }
-   },
-   "Level 3": {
-     "React": {
-       "Beginner": ["Components", "Props", "State"],
-       "Intermediate": ["Lifecycle Methods", "Event Handling", "Context API"],
-       "Advanced": ["Hooks", "Redux", "Server-Side Rendering"],
-       "Note": [
-         "You can choose other js framework like vue or angular instead of react"
-       ]
-     },
-     "TailwindCSS": {
-       "Beginner": ["Basic Usage", "Configuring", "Utilities"],
-       "Intermediate": ["Customizing", "Responsive Design", "Utilities"],
-       "Advanced": [
-         "Custom Components",
-         "Utility-First Design",
-         "Performance Optimization"
-       ]
-     }
-   },
-   "Level 4": {
-     "REST APIs": {
-       "Beginner": ["Request Methods", "Status Codes", "Headers"],
-       "Intermediate": ["Authentication", "Authorization", "Error Handling"],
-       "Advanced": ["API Design", "API Security", "API Performance"]
-     },
-     "Nextjs": {
-       "Beginner": ["Basic Setup", "Routing", "Pages"],
-       "Intermediate": [
-         "Server-Side Rendering",
-         "Static Site Generation",
-         "Internationalization"
-       ],
-       "Advanced": ["API Routes", "Authentication", "Performance Optimization"]
-     },
-     "Deployment & Hosting": {
-       "Beginner": ["Basic Hosting", "CI/CD", "Monitoring"],
-       "Intermediate": ["Containerization", "Orchestration", "Load Balancing"],
-       "Advanced": ["Serverless", "Cloud Providers", "Security"]
-     }
-   },
-   "Extras": {
-     "Version Control": {
-       "Beginner": ["Basic Git", "Branching", "Merging"],
-       "Intermediate": ["Git Flow", "Rebasing", "Squashing"],
-       "Advanced": ["Git Submodules", "Git Hooks", "Git Aliases"]
-     }
-   }
- }
+  "Level 1": {
+    "HTML": {
+      "Beginner": [
+        "Basic Structure (doctype, html, head, body)",
+        "Text Formatting (headings, paragraphs, bold, italic)",
+        "Lists (ul, ol, li)",
+        "Links and Images",
+        "div",
+        "section",
+        "body"
+      ],
+      "Intermediate": [
+        "Semantic Elements (header, footer, article, section)",
+        "Meta Data (meta tags, SEO basics)"
+      ],
+      "Advanced": [
+        "Forms (input, select, textarea, button)",
+        "Tables (table, tr, td, th)",
+        "iframes and embeds",
+        "canvas"
+      ]
+    },
+    "CSS": {
+      "Beginner": [
+        "Syntax and Selectors",
+        "Colors, Units, Typography",
+        "Box Model (margin, border, padding, content)",
+        "Properties and Values"
+      ],
+      "Intermediate": [
+        "Layout Techniques",
+        "Flexbox",
+        "Positioning (static, relative, absolute, fixed)",
+        "Transitions and Animations"
+      ],
+      "Advanced": [
+        "CSS Grid",
+        "Responsive Design (Media Queries)",
+        "CSS Preprocessors (SASS/SCSS)",
+        "BEM Methodology"
+      ]
+    },
+    "JavaScript Basics": {
+      "Beginner": [
+        "Variables (var, let, const)",
+        "Data Types",
+        "Functions and Scope",
+        "Operators"
+      ],
+      "Intermediate": [
+        "Conditional Statements (if, else, switch)",
+        "Loops (for, while, forEach)",
+        "Arrays and Objects",
+        "DOM Manipulation",
+        "Event Handling"
+      ],
+      "Advanced": [
+        "Object-Oriented Programming (OOP)",
+        "Promises",
+        "Async/Await",
+        "API Calls (Fetch API, JSON)"
+      ]
+    }
+  },
+  "Level 2": {
+    "Version Control": {
+      "Beginner": [
+        "Git Basics (init, add, commit)",
+        "GitHub Repositories",
+        "Cloning and Pushing Code"
+      ],
+      "Intermediate": [
+        "Branching and Merging",
+        "Pull Requests",
+        "Merge Conflicts Handling"
+      ],
+      "Advanced": ["Git Workflows (Gitflow, Forking Model)"]
+    },
+    "Package Managers": {
+      "Beginner": ["Introduction to NPM", "Installing Packages"],
+      "Intermediate": ["Yarn Basics", "Package.json Management"],
+      "Advanced": []
+    },
+    "Build Tools": {
+      "Beginner": ["What are Build Tools?", "Basics of Webpack"],
+      "Intermediate": ["Babel (JS Transpilation)", "Parcel and Vite Basics"],
+      "Advanced": [
+        "Webpack Advanced Configurations",
+        "Code Splitting and Lazy Loading"
+      ]
+    }
+  },
+  "Level 3": {
+    "Modern JavaScript Frameworks": {
+      "Beginner": ["React Basics (JSX, Components)", "State and Props"],
+      "Intermediate": [
+        "React Hooks (useState, useEffect)",
+        "Routing (React Router)",
+        "Component Lifecycle"
+      ],
+      "Advanced": [
+        "State Management (Redux, Context API)",
+        "Next.js Basics (SSR, SSG)"
+      ]
+    },
+    "Typescript": {
+      "Beginner": [
+        "Basic Types (string, number, boolean)",
+        "Interfaces and Types"
+      ],
+      "Intermediate": ["Generics", "Type Assertions"],
+      "Advanced": [
+        "Typescript with React",
+        "Advanced Types (utility types, intersection, union)"
+      ]
+    }
+  },
+  "level 4": {
+    "Testing": {
+      "Beginner": ["Unit Testing Basics (Jest)"],
+      "Intermediate": ["Testing React Components (React Testing Library)"],
+      "Advanced": ["End-to-End Testing (Cypress, Playwright)"]
+    },
+    "Performance Optimization": {
+      "Beginner": ["Why Performance Matters", "Image Optimization"],
+      "Intermediate": [
+        "Code Splitting",
+        "Lazy Loading",
+        "Memoization Techniques"
+      ],
+      "Advanced": ["Web Vitals Monitoring", "Advanced Caching Strategies"]
+    },
+    "Deployment": {
+      "Beginner": ["Deploying on Netlify, Vercel"],
+      "Intermediate": ["CI/CD Basics", "Github Actions for Deployment"],
+      "Advanced": ["Docker Basics for Frontend Deployment"]
+    }
+  }
+}

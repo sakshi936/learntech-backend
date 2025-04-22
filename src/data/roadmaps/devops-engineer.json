@@ -1,0 +1,115 @@
+{
+   "Level 1": {
+     "Linux and Basics": {
+       "Beginner": [
+         "Linux Fundamentals (File System, Basic Commands)",
+         "Understanding Users, Permissions",
+         "Shell Scripting Basics"
+       ],
+       "Intermediate": [
+         "Package Management (apt, yum, brew)",
+         "Process Management (ps, top, kill)"
+       ],
+       "Advanced": [
+         "Advanced Shell Scripting",
+         "System Monitoring and Logging"
+       ]
+     },
+     "Networking Basics": {
+       "Beginner": ["What is Networking?", "HTTP, HTTPS Basics", "DNS Basics"],
+       "Intermediate": [
+         "IP Addressing, Subnets",
+         "Ports and Protocols (TCP, UDP)"
+       ],
+       "Advanced": ["Load Balancers", "Reverse Proxy (Nginx, HAProxy)"]
+     },
+     "Version Control (Git)": {
+       "Beginner": ["Git Basics (init, add, commit, push)"],
+       "Intermediate": [
+         "Branching Strategies",
+         "Pull Requests, Merge Conflicts"
+       ],
+       "Advanced": ["Git Workflows (Trunk Based, Gitflow)"]
+     }
+   },
+   "Level 2": {
+     "Servers and Cloud Basics": {
+       "Beginner": [
+         "Understanding Servers and Hosting",
+         "Intro to Cloud (AWS, Azure, GCP)"
+       ],
+       "Intermediate": [
+         "Virtual Machines and Compute Services (EC2, GCE)",
+         "Storage Services (S3, Blob Storage)"
+       ],
+       "Advanced": ["Auto-scaling", "High Availability Architecture"]
+     },
+     "Containers and Virtualization": {
+       "Beginner": [
+         "What is Virtualization?",
+         "Docker Basics (Images, Containers)"
+       ],
+       "Intermediate": ["Docker Compose", "Docker Volumes and Networks"],
+       "Advanced": ["Container Orchestration Basics"]
+     },
+     "Configuration Management": {
+       "Beginner": ["What is Configuration Management?"],
+       "Intermediate": [
+         "Introduction to Ansible",
+         "Infrastructure as Code (IaC) Basics"
+       ],
+       "Advanced": ["Chef, Puppet Basics", "Terraform Introduction"]
+     }
+   },
+   "Level 3": {
+     "CI/CD Pipelines": {
+       "Beginner": ["What is CI/CD?", "Basic CI/CD with GitHub Actions"],
+       "Intermediate": ["Jenkins Basics", "GitLab CI/CD"],
+       "Advanced": [
+         "Advanced CI/CD (Multi-stage Pipelines)",
+         "Dockerized Pipelines"
+       ]
+     },
+     "Monitoring and Logging": {
+       "Beginner": ["What is Monitoring?", "Basic Metrics and Logs"],
+       "Intermediate": ["Prometheus Basics", "Grafana Dashboards"],
+       "Advanced": [
+         "ELK Stack (Elasticsearch, Logstash, Kibana)",
+         "Distributed Tracing (Jaeger, OpenTelemetry)"
+       ]
+     }
+   },
+   "level 4": {
+     "Cloud Services": {
+       "Beginner": [
+         "AWS Basics (IAM, EC2, S3)",
+         "GCP Basics (Compute Engine, Cloud Storage)"
+       ],
+       "Intermediate": ["AWS Lambda Basics", "Serverless Architecture"],
+       "Advanced": ["Kubernetes on AWS (EKS)", "GCP Kubernetes Engine (GKE)"]
+     },
+     "Kubernetes and Orchestration": {
+       "Beginner": [
+         "What is Kubernetes?",
+         "Basic kubectl Commands",
+         "Deploying First Pod"
+       ],
+       "Intermediate": ["Services, ConfigMaps, Secrets", "Helm Charts Basics"],
+       "Advanced": [
+         "Kubernetes Networking",
+         "Kubernetes Cluster Scaling and Monitoring"
+       ]
+     },
+     "Security and Best Practices": {
+       "Beginner": ["Introduction to Cloud Security", "SSH Key Management"],
+       "Intermediate": [
+         "VPC, Subnets, Security Groups",
+         "Secrets Management (Vault, AWS Secrets Manager)"
+       ],
+       "Advanced": [
+         "Container Security (Scanning Images)",
+         "Infrastructure Security (IAM, Policies)"
+       ]
+     }
+   }
+ }

@@ -1,0 +1,136 @@
+{
+   "Level 1": {
+     "Programming Fundamentals": {
+       "Beginner": [
+         "Introduction to Programming",
+         "Understanding Variables, Data Types, and Functions"
+       ],
+       "Intermediate": [
+         "Object-Oriented Programming (OOP)",
+         "Error Handling and Debugging"
+       ],
+       "Advanced": ["Memory Management Concepts", "Multithreading Basics"]
+     },
+     "Mobile Development Basics": {
+       "Beginner": [
+         "What is Mobile Development?",
+         "Mobile Platforms Overview (iOS, Android)"
+       ],
+       "Intermediate": [
+         "Native vs Cross-Platform Development",
+         "Understanding App Lifecycle (Activity, Fragment, ViewController)"
+       ],
+       "Advanced": ["Mobile Architecture Patterns (MVC, MVP, MVVM)"]
+     }
+   },
+   "Level 2": {
+     "Android Development": {
+       "Beginner": [
+         "Kotlin or Java Basics",
+         "Android Studio Setup",
+         "Creating Basic UI Layouts (XML)"
+       ],
+       "Intermediate": [
+         "RecyclerView, ViewPager",
+         "Fragments and Navigation Component",
+         "Room Database and Data Persistence"
+       ],
+       "Advanced": [
+         "Jetpack Compose Basics",
+         "Dependency Injection (Hilt, Dagger)"
+       ]
+     },
+     "iOS Development": {
+       "Beginner": [
+         "Swift Basics",
+         "Xcode Setup",
+         "Storyboards and SwiftUI Basics"
+       ],
+       "Intermediate": [
+         "CoreData and Persistence",
+         "Networking with URLSession and Alamofire"
+       ],
+       "Advanced": [
+         "Combine Framework",
+         "SwiftUI Advanced Topics (Animations, Transitions)"
+       ]
+     },
+     "Cross-Platform Development": {
+       "Beginner": [
+         "Flutter Basics (Dart Language)",
+         "React Native Basics (JavaScript, JSX)"
+       ],
+       "Intermediate": [
+         "Navigation and Routing",
+         "State Management (Provider, Redux, Riverpod)"
+       ],
+       "Advanced": [
+         "Performance Optimization",
+         "Platform-Specific Integrations"
+       ]
+     }
+   },
+   "Level 3": {
+     "Advanced Mobile Concepts": {
+       "Beginner": [
+         "APIs and RESTful Services",
+         "JSON Parsing and Data Handling"
+       ],
+       "Intermediate": [
+         "Push Notifications (Firebase Cloud Messaging, APNs)",
+         "Authentication and Authorization (OAuth, Firebase Auth)"
+       ],
+       "Advanced": [
+         "Offline-First Architecture",
+         "Background Services and Tasks (WorkManager, Background Fetch)"
+       ]
+     },
+     "Testing and Debugging": {
+       "Beginner": ["Unit Testing Basics (JUnit, XCTest)"],
+       "Intermediate": [
+         "UI Testing (Espresso, XCUITest)",
+         "Debugging Techniques and Crash Reporting"
+       ],
+       "Advanced": ["Test-Driven Development (TDD) in Mobile"]
+     }},
+     "level 4": {
+       "Security Best Practices": {
+         "Beginner": [
+           "Understanding Mobile Security Risks",
+           "Secure Storage (Keychain, EncryptedSharedPreferences)"
+         ],
+         "Intermediate": [
+           "Data Encryption and Decryption",
+           "Secure API Communication (SSL Pinning)"
+         ],
+         "Advanced": ["Code Obfuscation Techniques", "App Integrity Checks"]
+       },
+       "Deployment and Maintenance": {
+         "Beginner": [
+           "Publishing Android Apps (Play Store Basics)",
+           "Publishing iOS Apps (App Store Basics)"
+         ],
+         "Intermediate": [
+           "Understanding App Store Guidelines and Policies",
+           "Version Control with Git"
+         ],
+         "Advanced": [
+           "CI/CD for Mobile Apps (Fastlane, Bitrise, GitHub Actions)"
+         ]
+       },
+       "Soft Skills and Growth": {
+         "Beginner": [
+           "Basic UI/UX Principles for Mobile",
+           "Reading Mobile Design Specs"
+         ],
+         "Intermediate": [
+           "Collaboration with Designers and Backend Developers",
+           "Agile Development for Mobile Projects"
+         ],
+         "Advanced": [
+           "Contributing to Open Source Projects",
+           "Building a Personal Mobile App Portfolio"
+         ]
+       }
+     }
+   }

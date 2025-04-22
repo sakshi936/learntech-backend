@@ -1,0 +1,102 @@
+{
+   "Level 1": {
+     "Cloud Fundamentals": {
+       "Beginner": [
+         "What is Cloud Computing?",
+         "Cloud Deployment Models (Public, Private, Hybrid)",
+         "Cloud Service Models (IaaS, PaaS, SaaS)"
+       ],
+       "Intermediate": [
+         "Advantages and Challenges of Cloud",
+         "Overview of Major Cloud Providers (AWS, Azure, GCP)"
+       ],
+       "Advanced": [
+         "Global Infrastructure Concepts (Regions, Availability Zones)",
+         "Shared Responsibility Model"
+       ]
+     },
+     "Linux Basics": {
+       "Beginner": [
+         "Linux Commands and Shell Basics",
+         "User and Permission Management"
+       ],
+       "Intermediate": [
+         "Networking Commands (netstat, curl, wget)",
+         "Shell Scripting Basics"
+       ],
+       "Advanced": ["Automating Tasks with Bash Scripts"]
+     },
+     "Networking Basics": {
+       "Beginner": [
+         "What is IP Addressing?",
+         "Subnetting Basics",
+         "HTTP/HTTPS Basics"
+       ],
+       "Intermediate": ["Load Balancers", "VPNs, VPCs, and Peering"],
+       "Advanced": ["Network Routing", "Firewall and Security Groups"]
+     }
+   },
+   "Level 2": {
+     "Compute Services": {
+       "Beginner": ["Virtual Machines (EC2, Compute Engine, Azure VM)"],
+       "Intermediate": ["Auto Scaling Groups", "Elastic Load Balancer"],
+       "Advanced": ["Serverless Computing (AWS Lambda, Azure Functions)"]
+     },
+     "Storage and Databases": {
+       "Beginner": [
+         "Cloud Storage Services (S3, Blob Storage, GCS)",
+         "Relational Databases (RDS, Cloud SQL)"
+       ],
+       "Intermediate": ["NoSQL Databases (DynamoDB, CosmosDB, Firestore)"],
+       "Advanced": [
+         "Data Warehousing (Redshift, BigQuery)",
+         "Storage Lifecycle Policies and Glacier/Cold Storage"
+       ]
+     },
+     "Identity and Access Management (IAM)": {
+       "Beginner": ["What is IAM?", "Users, Groups, Roles, and Policies"],
+       "Intermediate": [
+         "Permission Management",
+         "Role-Based Access Control (RBAC)"
+       ],
+       "Advanced": [
+         "Cross-Account Access",
+         "Federated Identities and Single Sign-On (SSO)"
+       ]
+     }
+   },
+   "Level 3": {
+     "DevOps Integration": {
+       "Beginner": ["Basic DevOps Concepts (CI/CD)", "Introduction to GitOps"],
+       "Intermediate": [
+         "Infrastructure as Code (Terraform, AWS CloudFormation)"
+       ],
+       "Advanced": ["Automating Deployments (Ansible, Pulumi)"]
+     },
+     "Monitoring and Logging": {
+       "Beginner": ["Cloud Native Monitoring Tools (CloudWatch, Stackdriver)"],
+       "Intermediate": ["Setting Up Metrics and Alarms"],
+       "Advanced": ["Distributed Tracing (AWS X-Ray, OpenTelemetry)"]
+     },
+     "Security and Compliance": {
+       "Beginner": [
+         "Basic Security Principles (Encryption in Transit and at Rest)",
+         "Cloud Security Best Practices"
+       ],
+       "Intermediate": ["Compliance Standards (HIPAA, GDPR, SOC2)"],
+       "Advanced": ["Implementing WAF, Shield, Security Hub"]
+     }
+   },
+   "level 4": {
+     "Disaster Recovery and Backup": {
+       "Beginner": ["Backup and Restore Concepts"],
+       "Intermediate": ["Multi-Region Backup Strategies"],
+       "Advanced": ["Disaster Recovery Planning (RTO and RPO)"]
+     },
+     "Advanced Architectures": {
+       "Beginner": ["High Availability vs Fault Tolerance"],
+       "Intermediate": ["Microservices and Serverless Architectures"],
+       "Advanced": ["Multi-Cloud and Hybrid Cloud Architectures"]
+     }
+   }
+ }

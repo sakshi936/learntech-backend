@@ -1,0 +1,114 @@
+{
+   "Level 1": {
+     "Frontend Basics": {
+       "Beginner": [
+         "HTML Basics (Structure, Tags, Forms)",
+         "CSS Basics (Selectors, Properties, Box Model)",
+         "JavaScript Basics (Variables, Functions, Events)"
+       ],
+       "Intermediate": [
+         "DOM Manipulation",
+         "Flexbox and Grid",
+         "Responsive Design (Media Queries)"
+       ],
+       "Advanced": [
+         "Advanced JavaScript (Promises, Async/Await)",
+         "Modern CSS (Animations, Preprocessors - SASS)"
+       ]
+     },
+     "Backend Basics": {
+       "Beginner": [
+         "Programming Language Basics (Node.js, Python, Java)",
+         "Control Structures and Functions",
+         "Simple HTTP Server"
+       ],
+       "Intermediate": [
+         "Intro to Databases (SQL and NoSQL)",
+         "Building Simple REST APIs"
+       ],
+       "Advanced": ["Authentication Basics", "API Security Basics"]
+     },
+     "Version Control": {
+       "Beginner": ["Git and GitHub Basics (init, add, commit, push)"],
+       "Intermediate": ["Branching, Merging, Pull Requests"],
+       "Advanced": ["Git Workflows (Feature Branch, Gitflow)"]
+     }
+   },
+   "Level 2": {
+     "Frontend Advanced": {
+       "Beginner": ["React Basics (JSX, Components, Props)"],
+       "Intermediate": [
+         "React Hooks (useState, useEffect)",
+         "Routing (React Router)"
+       ],
+       "Advanced": [
+         "State Management (Redux, Context API)",
+         "Next.js Basics (SSR, SSG)"
+       ]
+     },
+     "Backend Advanced": {
+       "Beginner": [
+         "Express.js Basics (or Django Basics for Python)",
+         "Creating CRUD APIs"
+       ],
+       "Intermediate": ["Authentication (JWT, OAuth)", "MVC Architecture"],
+       "Advanced": ["GraphQL APIs", "Microservices Concepts"]
+     },
+     "Databases": {
+       "Beginner": ["MongoDB Basics", "MySQL/PostgreSQL Basics"],
+       "Intermediate": ["Schema Design", "ORM Tools (Mongoose, Sequelize)"],
+       "Advanced": [
+         "Database Optimization",
+         "Database Replication and Sharding"
+       ]
+     }
+   },
+   "Level 3": {
+     "DevOps & Deployment": {
+       "Beginner": [
+         "Deploy Frontend (Vercel, Netlify)",
+         "Deploy Backend (Render, Railway)"
+       ],
+       "Intermediate": [
+         "Docker Basics (Containers)",
+         "Environment Variables Management"
+       ],
+       "Advanced": ["CI/CD Pipelines", "Introduction to Kubernetes"]
+     },
+     "Testing and Debugging": {
+       "Beginner": [
+         "Unit Testing Frontend (Jest, React Testing Library)",
+         "Unit Testing Backend (Mocha, Chai, Pytest)"
+       ],
+       "Intermediate": ["Integration Testing", "Mocking APIs"],
+       "Advanced": [
+         "End-to-End Testing (Cypress, Playwright)",
+         "Load Testing APIs (Artillery, k6)"
+       ]
+     }
+   },
+   "level 4": {
+     "Security Best Practices": {
+       "Beginner": ["Basic Web Security Concepts (XSS, CSRF, SQL Injection)"],
+       "Intermediate": [
+         "Authentication and Authorization Best Practices",
+         "Hashing Passwords Securely (bcrypt, Argon2)"
+       ],
+       "Advanced": ["Secure Headers, CORS Policies", "OAuth2, OpenID Connect"]
+     },
+     "Soft Skills & System Design": {
+       "Beginner": [
+         "Effective Communication",
+         "Writing Clean and Readable Code"
+       ],
+       "Intermediate": [
+         "Understanding System Design Basics",
+         "Low-Level Design (LLD) - API Design Principles"
+       ],
+       "Advanced": [
+         "High-Level Design (HLD) - Scalability, Load Balancing",
+         "Design Patterns (Singleton, Factory, Observer)"
+       ]
+     }
+   }
+ }

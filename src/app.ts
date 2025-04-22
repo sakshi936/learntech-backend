@@ -7,6 +7,7 @@ import profileRoutes from "./routes/profileRoutes";
 import progressRoutes from "./routes/progressRoutes";
 import roadmapRoutes from "./routes/roadmapRoutes";
 import blogRoutes from "./routes/uploadBlog.route";
+import questionRoutes from "./routes/questionRoutes";
 // Configure dotenv
 dotenv.config();
 
@@ -27,7 +28,8 @@ dbConnect();
 
 const PORT = process.env.PORT || 8000;
 
-app.use(express.json());
+app.use(express.json({ limit: '100mb' }));
+app.use(express.urlencoded({ extended: true, limit: '100mb' }));
 
 app.use("/auth", authRoutes);
 app.use("/profile", profileRoutes);
@@ -35,6 +37,7 @@ app.use("/progress", progressRoutes);
 app.use("/roadmaps", roadmapRoutes);
 //  blog routes
 app.use("/api/blogs", blogRoutes);
+app.use("/questions", questionRoutes);
 
 app.get("/", (req: Request, res: Response) => {
 	res.send("Successfully Connected with TechLearn Backend");

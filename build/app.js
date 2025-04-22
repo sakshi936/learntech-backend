@@ -12,6 +12,7 @@ const profileRoutes_1 = __importDefault(require("./routes/profileRoutes"));
 const progressRoutes_1 = __importDefault(require("./routes/progressRoutes"));
 const roadmapRoutes_1 = __importDefault(require("./routes/roadmapRoutes"));
 const uploadBlog_route_1 = __importDefault(require("./routes/uploadBlog.route"));
+const questionRoutes_1 = __importDefault(require("./routes/questionRoutes"));
 // Configure dotenv
 dotenv_1.default.config();
 const app = (0, express_1.default)();
@@ -25,13 +26,15 @@ app.use((0, cors_1.default)({
 // Connect to database
 (0, dbConnect_1.default)();
 const PORT = process.env.PORT || 8000;
-app.use(express_1.default.json());
+app.use(express_1.default.json({ limit: '100mb' }));
+app.use(express_1.default.urlencoded({ extended: true, limit: '100mb' }));
 app.use("/auth", authRoutes_1.default);
 app.use("/profile", profileRoutes_1.default);
 app.use("/progress", progressRoutes_1.default);
 app.use("/roadmaps", roadmapRoutes_1.default);
 //  blog routes
 app.use("/api/blogs", uploadBlog_route_1.default);
+app.use("/questions", questionRoutes_1.default);
 app.get("/", (req, res) => {
     res.send("Successfully Connected with TechLearn Backend");
 });

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { BlogModel } from "../models/blogs.modal";
-import { uploadOnClodinary } from "../utils/cloudinary.service";
+import { uploadToCloudinary } from "../utils/cloudinary.service";
 // Create a new blog
 export const uploadBlog = async (req: Request, res: Response): Promise<void> => {
 	try {
@@ -17,7 +17,7 @@ export const uploadBlog = async (req: Request, res: Response): Promise<void> => 
 	  // Handle file from multer memory storage
 	  if (req.file) {
 		 // Use the buffer directly
-		 blogPublicUrl = await uploadOnClodinary(req.file.buffer);
+		 blogPublicUrl = await uploadToCloudinary(req.file.buffer,'auto');
 	  } else if (req.body.mediaUrl) {
 		 // For text-only submissions or URL submissions
 		 blogPublicUrl = req.body.mediaUrl;

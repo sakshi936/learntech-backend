@@ -45,3 +45,26 @@ export interface UserProfile{
    skills:string[];
    course:string;
 }
+
+export interface IEvent extends Document {
+  title: string;
+  description: string;
+  date: Date;
+  location?: string;
+  organizer?: string;
+  imageUrl?: string;
+  isActive: boolean;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface IEventQuestion extends Document {
+  username: string;
+  question: string;
+  answer?: string; // Optional answer field
+  isAnswered: boolean;
+  upvotes: number;
+  upvotedBy: string[];
+  createdAt: Date;
+  updatedAt: Date;
+}

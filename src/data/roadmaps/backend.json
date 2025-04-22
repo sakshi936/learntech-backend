@@ -1,99 +1,131 @@
 {
-   "Level 1": {
-     "Node.js": {
-       "Beginner": ["Basic Syntax", "Modules", "Events"],
-       "Intermediate": ["File System", "Streams", "Buffer"],
-       "Advanced": ["Async/Await", "Promises", "Error Handling"]
-     },
-     "Express.js": {
-       "Beginner": ["Basic Routing", "Request/Response", "Middleware"],
-       "Intermediate": ["Error Handling", "Authentication", "Authorization"],
-       "Advanced": ["Routing", "Middleware", "Performance Optimization"]
-     }
-   },
-   "Level 2": {
-     "Databases": {
-       "Beginner": ["Basic CRUD", "SQL vs NoSQL", "Database Models"],
-       "Intermediate": ["Querying", "Indexing", "Caching"],
-       "Advanced": [
-         "Database Design",
-         "Database Security",
-         "Database Performance"
-       ]
-     },
-     "Cloud Services": {
-       "Beginner": ["Basic Cloud", "Cloud Providers", "Cloud Storage"],
-       "Intermediate": [
-         "Cloud Security",
-         "Cloud Cost Optimization",
-         "Cloud Scalability"
-       ],
-       "Advanced": [
-         "Cloud Architecture",
-         "Cloud Migration",
-         "Cloud Disaster Recovery"
-       ]
-     }
-   },
-   "Level 3": {
-     "APIs": {
-       "Beginner": ["Basic API", "API Design", "API Security"],
-       "Intermediate": ["API Performance", "API Testing", "API Documentation"],
-       "Advanced": ["API Gateway", "API Management", "API Security"]
-     },
-     "Microservices": {
-       "Beginner": [
-         "Basic Microservices",
-         "Microservices Architecture",
-         "Microservices Communication"
-       ],
-       "Intermediate": [
-         "Microservices Security",
-         "Microservices Testing",
-         "Microservices Deployment"
-       ],
-       "Advanced": [
-         "Microservices Design",
-         "Microservices Performance",
-         "Microservices Scalability"
-       ]
-     }
-   },
-   "Level 4": {
-     "DevOps": {
-       "Beginner": ["Basic DevOps", "DevOps Tools", "DevOps Practices"],
-       "Intermediate": [
-         "DevOps Automation",
-         "DevOps Security",
-         "DevOps Monitoring"
-       ],
-       "Advanced": [
-         "DevOps Architecture",
-         "DevOps Optimization",
-         "DevOps Innovation"
-       ]
-     },
-     "Cloud Native": {
-       "Beginner": [
-         "Basic Cloud Native",
-         "Cloud Native Architecture",
-         "Cloud Native Development"
-       ],
-       "Intermediate": [
-         "Cloud Native Security",
-         "Cloud Native Testing",
-         "Cloud Native Deployment"
-       ],
-       "Advanced": [
-         "Cloud Native Design",
-         "Cloud Native Performance",
-         "Cloud Native Scalability"
-       ]
-     }
-   },
-   "Extras": {
-     "Containerization": {
-       "Beginner": ["Basic Docker", "Docker Commands", "Dockerfile"]
-   }
- }
+  "Level 1": {
+    "Programming Languages": {
+      "Beginner": [
+        "Basics of any one language (Node.js - JavaScript, Python, Java, etc.)",
+        "Variables, Data Types, Operators",
+        "Control Structures (if-else, loops)",
+        "Functions and Modules"
+      ],
+      "Intermediate": [
+        "Object-Oriented Programming (OOP)",
+        "Error Handling",
+        "Working with Files",
+        "Data Structures (Lists, Stacks, Queues, HashMaps)"
+      ],
+      "Advanced": [
+        "Concurrency and Parallelism",
+        "Memory Management Concepts"
+      ]
+    },
+    "Version Control": {
+      "Beginner": ["Git Basics (init, add, commit)", "GitHub Repositories"],
+      "Intermediate": [
+        "Branching, Merging",
+        "Pull Requests, Merge Conflicts"
+      ],
+      "Advanced": ["Advanced Git Workflows (Gitflow, Forking Workflow)"]
+    }
+  },
+  "Level 2": {
+    "Databases": {
+      "Beginner": [
+        "SQL Basics (Create, Read, Update, Delete - CRUD)",
+        "Introduction to NoSQL (MongoDB Basics)"
+      ],
+      "Intermediate": [
+        "Database Relationships (1:1, 1:N, N:M)",
+        "Indexes, Aggregations",
+        "Basic Query Optimization"
+      ],
+      "Advanced": [
+        "Database Design and Normalization",
+        "Replication and Sharding",
+        "ACID vs BASE Models"
+      ]
+    },
+    "APIs and Web Services": {
+      "Beginner": [
+        "Introduction to APIs",
+        "REST API Basics (GET, POST, PUT, DELETE)",
+        "Using Postman for Testing APIs"
+      ],
+      "Intermediate": [
+        "Authentication (Basic Auth, Token-Based Auth)",
+        "CRUD API Development (Express.js, Django REST Framework, etc.)"
+      ],
+      "Advanced": [
+        "OAuth2, JWT Authentication",
+        "Rate Limiting, Caching, Pagination in APIs",
+        "GraphQL Basics"
+      ]
+    },
+    "Servers & Hosting": {
+      "Beginner": ["What is a Server?", "HTTP and HTTPS Basics"],
+      "Intermediate": [
+        "Building a Basic Web Server (Express, Flask, etc.)",
+        "Middleware Concepts"
+      ],
+      "Advanced": [
+        "Nginx Basics",
+        "Load Balancing and Reverse Proxy Concepts"
+      ]
+    }
+  },
+  "Level 3": {
+    "Frameworks and Libraries": {
+      "Beginner": ["Node.js with Express.js", "Flask (for Python) Basics"],
+      "Intermediate": ["MVC Architecture", "Dependency Injection Concepts"],
+      "Advanced": [
+        "NestJS (for Node.js)",
+        "Spring Boot (for Java)",
+        "Advanced Flask or Django Concepts"
+      ]
+    },
+    "Authentication & Authorization": {
+      "Beginner": ["Session Management", "Cookies and Local Storage Basics"],
+      "Intermediate": ["JWT Tokens", "OAuth2 Basics"],
+      "Advanced": ["SSO (Single Sign-On)", "Multi-Factor Authentication"]
+    },
+    "Caching & Performance Optimization": {
+      "Beginner": ["What is Caching?"],
+      "Intermediate": ["Redis Basics", "In-Memory Caching Techniques"],
+      "Advanced": ["Distributed Caching", "Cache Invalidation Strategies"]
+    }
+  },
+  "Level 4": {
+    "Testing and Debugging": {
+      "Beginner": ["Unit Testing Basics (Jest, Mocha, Pytest)"],
+      "Intermediate": ["Integration Testing", "Mocking APIs and Databases"],
+      "Advanced": ["Load Testing (Artillery, k6)", "End-to-End Testing"]
+    },
+    "Security Best Practices": {
+      "Beginner": [
+        "Understanding Basic Security Threats (XSS, SQL Injection)"
+      ],
+      "Intermediate": [
+        "Input Validation",
+        "Hashing Passwords (bcrypt, Argon2)"
+      ],
+      "Advanced": [
+        "Implementing HTTPS",
+        "Setting Up Secure Headers",
+        "Security Testing"
+      ]
+    },
+    "DevOps Basics (for Backend Engineers)": {
+      "Beginner": [
+        "Introduction to Cloud (AWS/GCP Basics)",
+        "Linux Basics (Commands, File System)"
+      ],
+      "Intermediate": [
+        "Docker Basics",
+        "Environment Variables and Secrets Management"
+      ],
+      "Advanced": [
+        "CI/CD Pipelines (GitHub Actions, GitLab CI)",
+        "Kubernetes Basics"
+      ]
+    }
+  }
 }

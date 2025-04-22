@@ -1,0 +1,121 @@
+{
+   "Level 1": {
+     "Mathematics and Statistics": {
+       "Beginner": [
+         "Descriptive Statistics (Mean, Median, Mode, Variance)",
+         "Probability Basics",
+         "Distributions (Normal, Binomial, Poisson)"
+       ],
+       "Intermediate": [
+         "Inferential Statistics (Hypothesis Testing, p-values)",
+         "Linear Algebra Basics (Vectors, Matrices, Operations)"
+       ],
+       "Advanced": [
+         "Calculus for Machine Learning (Derivatives, Integrals)",
+         "Optimization Techniques (Gradient Descent)"
+       ]
+     },
+     "Programming Fundamentals": {
+       "Beginner": [
+         "Python Basics (Syntax, Variables, Loops, Functions)",
+         "R Basics (optional alternative)"
+       ],
+       "Intermediate": [
+         "Working with Libraries (NumPy, Pandas)",
+         "Data Structures (Lists, Dictionaries, Arrays)"
+       ],
+       "Advanced": ["OOP Concepts", "Writing Modular and Efficient Code"]
+     },
+     "Data Handling": {
+       "Beginner": [
+         "Data Collection Basics",
+         "Reading and Writing Files (CSV, JSON, Excel)"
+       ],
+       "Intermediate": [
+         "Data Cleaning (Handling Missing Data, Outliers)",
+         "Data Transformation (Scaling, Encoding)"
+       ],
+       "Advanced": [
+         "Data Pipelines",
+         "Big Data Basics (Spark, Hadoop Overview)"
+       ]
+     }
+   },
+   "Level 2": {
+     "Exploratory Data Analysis (EDA)": {
+       "Beginner": [
+         "Understanding the Dataset",
+         "Univariate and Bivariate Analysis"
+       ],
+       "Intermediate": [
+         "Data Visualization with Matplotlib and Seaborn",
+         "Feature Engineering Basics"
+       ],
+       "Advanced": ["Dimensionality Reduction Techniques (PCA, t-SNE)"]
+     },
+     "Machine Learning Fundamentals": {
+       "Beginner": [
+         "What is Machine Learning?",
+         "Types of Machine Learning (Supervised, Unsupervised)"
+       ],
+       "Intermediate": [
+         "Regression Algorithms (Linear, Logistic)",
+         "Classification Algorithms (KNN, SVM, Decision Trees)"
+       ],
+       "Advanced": [
+         "Model Evaluation Metrics (Accuracy, F1-Score, ROC Curve)",
+         "Hyperparameter Tuning (Grid Search, Random Search)"
+       ]
+     },
+     "SQL and Databases": {
+       "Beginner": ["Basic SQL Queries (SELECT, INSERT, UPDATE, DELETE)"],
+       "Intermediate": ["Joins, Subqueries, Window Functions"],
+       "Advanced": ["Optimizing SQL Queries", "Working with Large Databases"]
+     }
+   },
+   "Level 3": {
+     "Advanced Machine Learning": {
+       "Beginner": ["Ensemble Methods (Bagging, Boosting, Random Forest)"],
+       "Intermediate": [
+         "Support Vector Machines (SVM)",
+         "Clustering Techniques (K-Means, DBSCAN)"
+       ],
+       "Advanced": ["Recommendation Systems", "Anomaly Detection"]
+     },
+     "Deep Learning and AI": {
+       "Beginner": [
+         "Introduction to Neural Networks",
+         "Working with TensorFlow/Keras or PyTorch"
+       ],
+       "Intermediate": [
+         "Convolutional Neural Networks (CNNs)",
+         "Recurrent Neural Networks (RNNs, LSTMs)"
+       ],
+       "Advanced": [
+         "Generative Adversarial Networks (GANs)",
+         "Transformers and Attention Mechanism (BERT, GPT)"
+       ]
+     }
+   },
+   "level 4": {
+     "Deployment and Production": {
+       "Beginner": ["Saving Models (Pickle, Joblib)"],
+       "Intermediate": ["Building REST APIs for ML Models (Flask, FastAPI)"],
+       "Advanced": [
+         "Model Deployment (AWS Sagemaker, GCP AI Platform)",
+         "MLOps Basics (CI/CD for Machine Learning)"
+       ]
+     },
+     "Soft Skills and Business Acumen": {
+       "Beginner": ["Data Storytelling Basics", "Communication Skills"],
+       "Intermediate": [
+         "Understanding Business Problems",
+         "Framing Data Science Solutions"
+       ],
+       "Advanced": [
+         "Product Thinking for Data Scientists",
+         "End-to-End Project Management"
+       ]
+     }
+   }
+ }

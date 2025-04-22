@@ -16,7 +16,7 @@ const uploadBlog = async (req, res) => {
         // Handle file from multer memory storage
         if (req.file) {
             // Use the buffer directly
-            blogPublicUrl = await (0, cloudinary_service_1.uploadOnClodinary)(req.file.buffer);
+            blogPublicUrl = await (0, cloudinary_service_1.uploadToCloudinary)(req.file.buffer, 'auto');
         }
         else if (req.body.mediaUrl) {
             // For text-only submissions or URL submissions

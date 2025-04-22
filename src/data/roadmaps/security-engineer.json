@@ -1,0 +1,228 @@
+{
+   "Level 1: Foundations": {
+     "Networking Fundamentals": {
+       "Beginner": [
+         "TCP/IP Model, OSI Model",
+         "Basic Networking Devices (Routers, Switches, Firewalls - Conceptual)",
+         "IP Addressing, Subnetting",
+         "Common Network Protocols (HTTP, DNS, DHCP)"
+       ],
+       "Intermediate": [
+         "Network Design Principles",
+         "Routing and Switching Concepts",
+         "Firewall Configuration and Management (Basic)",
+         "VPNs and Tunneling"
+       ],
+       "Advanced": [
+         "Advanced Network Security Architectures",
+         "Intrusion Detection and Prevention Systems (IDS/IPS)",
+         "Network Segmentation",
+         "Software-Defined Networking (SDN) Security"
+       ]
+     },
+     "Operating System Fundamentals": {
+       "Beginner": [
+         "Basic Concepts of Operating Systems (Windows, Linux)",
+         "User and Permissions Management",
+         "File Systems",
+         "Command Line Basics (Linux/Bash)"
+       ],
+       "Intermediate": [
+         "System Hardening Techniques",
+         "Process Management and Security",
+         "Memory Management and Security",
+         "Logging and Auditing"
+       ],
+       "Advanced": [
+         "Kernel Security Concepts",
+         "Security Modules (e.g., SELinux, AppArmor)",
+         "Operating System Internals and Security Vulnerabilities",
+         "Incident Response on Operating Systems"
+       ]
+     },
+     "Security Principles and Concepts": {
+       "Beginner": [
+         "CIA Triad (Confidentiality, Integrity, Availability)",
+         "Basic Security Terminology (Threats, Vulnerabilities, Risks)",
+         "Authentication, Authorization, Accounting (AAA)",
+         "Defense in Depth"
+       ],
+       "Intermediate": [
+         "Risk Management Frameworks",
+         "Security Policies and Procedures",
+         "Cryptography Basics (Symmetric, Asymmetric Encryption, Hashing)",
+         "Security Governance and Compliance (Overview)"
+       ],
+       "Advanced": [
+         "Threat Modeling Methodologies",
+         "Security Architecture and Design Principles",
+         "Applied Cryptography",
+         "Legal and Regulatory Aspects of Security"
+       ]
+     }
+   },
+   "Level 2: Core Security Engineering Skills": {
+     "Secure Development Practices": {
+       "Beginner": [
+         "Introduction to Software Development Life Cycle (SDLC)",
+         "Basic Security Considerations in Coding"
+       ],
+       "Intermediate": [
+         "Secure Coding Principles (OWASP Top 10 - Awareness)",
+         "Static and Dynamic Application Security Testing (SAST/DAST - Basic)",
+         "Input Validation and Output Encoding"
+       ],
+       "Advanced": [
+         "Threat Modeling for Applications",
+         "Secure SDLC Implementation",
+         "Advanced Vulnerability Analysis and Remediation",
+         "DevSecOps Concepts"
+       ]
+     },
+     "Infrastructure Security": {
+       "Beginner": [
+         "Basic Server Hardening",
+         "Endpoint Security Fundamentals (Antivirus, EDR - Conceptual)"
+       ],
+       "Intermediate": [
+         "Server Security Best Practices (Configuration, Patch Management)",
+         "Endpoint Detection and Response (EDR) Implementation and Management",
+         "Cloud Security Fundamentals (AWS, Azure, GCP - Basic)"
+       ],
+       "Advanced": [
+         "Designing and Implementing Secure Infrastructure Architectures",
+         "Cloud Security Hardening and Compliance",
+         "Infrastructure as Code (IaC) Security",
+         "Container and Orchestration Security (Docker, Kubernetes)"
+       ]
+     },
+     "Identity and Access Management (IAM)": {
+       "Beginner": ["Basic Concepts of User Management and Authentication"],
+       "Intermediate": [
+         "Implementing and Managing IAM Systems (Directory Services, SSO)",
+         "Multi-Factor Authentication (MFA)",
+         "Role-Based Access Control (RBAC)"
+       ],
+       "Advanced": [
+         "Attribute-Based Access Control (ABAC)",
+         "Federated Identity Management",
+         "Privileged Access Management (PAM)",
+         "Identity Governance and Administration (IGA)"
+       ]
+     }
+   },
+   "Level 3: Specializations and Advanced Topics": {
+     "Application Security": {
+       "Beginner": ["Understanding Common Web Application Vulnerabilities"],
+       "Intermediate": [
+         "Performing Web Application Security Assessments",
+         "Using Security Testing Tools (Burp Suite, OWASP ZAP - Basic)",
+         "Vulnerability Remediation Techniques"
+       ],
+       "Advanced": [
+         "Advanced Web Application Penetration Testing",
+         "Mobile Application Security",
+         "API Security",
+         "Security Architecture Reviews"
+       ]
+     },
+     "Cloud Security Engineering": {
+       "Beginner": [
+         "Basic Understanding of Cloud Service Models (IaaS, PaaS, SaaS)"
+       ],
+       "Intermediate": [
+         "Implementing Security Controls in Cloud Environments (AWS Security Hub, Azure Security Center, GCP Security Command Center)",
+         "Cloud IAM and Access Control",
+         "Cloud Networking Security"
+       ],
+       "Advanced": [
+         "Designing Secure Cloud Architectures",
+         "Cloud Security Automation",
+         "Serverless Security",
+         "Cloud Compliance and Governance"
+       ]
+     },
+     "SecOps": {
+       "Beginner": ["Basic Understanding of Security Monitoring and Logging"],
+       "Intermediate": [
+         "Setting up and Managing Security Information and Event Management (SIEM) Systems",
+         "Basic Incident Handling Procedures",
+         "Threat Intelligence Fundamentals"
+       ],
+       "Advanced": [
+         "Developing and Implementing Incident Response Plans",
+         "Advanced Threat Hunting Techniques",
+         "Security Automation and Orchestration (SOAR)",
+         "Digital Forensics"
+       ]
+     },
+     "Cryptography and Security": {
+       "Beginner": ["Understanding Different Types of Encryption"],
+       "Intermediate": [
+         "Implementing Cryptographic Solutions",
+         "Understanding PKI (Public Key Infrastructure)",
+         "Secure Communication Protocols (TLS/SSL)"
+       ],
+       "Advanced": [
+         "Cryptographic Algorithm Analysis",
+         "Hardware Security Modules (HSMs)",
+         "Blockchain Security Concepts",
+         "Homomorphic Encryption (Overview)"
+       ]
+     }
+   },
+   "Level 4: Emerging Trends and Mastery": {
+     "Automation/Orchestration": {
+       "Beginner": ["Introduction to Automation in Security"],
+       "Intermediate": [
+         "Using Scripting Languages (Python, PowerShell) for Security Tasks",
+         "Introduction to SOAR Platforms"
+       ],
+       "Advanced": [
+         "Designing and Implementing Complex Security Automation Workflows",
+         "Integrating Security Tools and Platforms",
+         "Developing Custom Security Automation Solutions"
+       ]
+     },
+     "Threat Intelligence": {
+       "Beginner": ["Understanding the Basics of Threat Intelligence"],
+       "Intermediate": [
+         "Collecting, Processing, and Analyzing Threat Data",
+         "Using Threat Intelligence Platforms",
+         "Understanding Different Threat Actors and Campaigns"
+       ],
+       "Advanced": [
+         "Developing Threat Intelligence Programs",
+         "Conducting Advanced Threat Analysis and Attribution",
+         "Integrating Threat Intelligence into Security Operations"
+       ]
+     },
+     "Privacy Engineering": {
+       "Beginner": [
+         "Understanding Basic Privacy Principles (GDPR, CCPA - Awareness)"
+       ],
+       "Intermediate": [
+         "Implementing Privacy-Enhancing Technologies",
+         "Data Minimization and Anonymization Techniques",
+         "Privacy by Design Principles"
+       ],
+       "Advanced": [
+         "Designing Privacy-Preserving Systems",
+         "Privacy Impact Assessments",
+         "Legal and Regulatory Compliance in Privacy"
+       ]
+     },
+     "Emerging Technologies": {
+       "Beginner": [
+         "Awareness of New Security Trends (Zero Trust, Extended Detection and Response - XDR, Security AI/ML)"
+       ],
+       "Intermediate": [
+         "Understanding the Concepts and Benefits of Emerging Security Technologies"
+       ],
+       "Advanced": [
+         "Implementing and Managing Emerging Security Technologies",
+         "Contributing to Research and Development in Security Innovations"
+       ]
+     }
+   }
+ }

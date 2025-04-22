@@ -1,0 +1,173 @@
+{
+   "Level 1: Foundations (Individual Contributor Expertise)": {
+     "Deep Technical Proficiency": {
+       "Beginner": [
+         "Solid understanding of core technical domain (e.g., Software Development, Networking, Data Science - as per specialization)"
+       ],
+       "Intermediate": [
+         "Hands-on experience in the technical domain, capable of contributing to projects and solving complex problems"
+       ],
+       "Advanced": [
+         "Recognized as a technical expert within the team, able to architect solutions and mentor others technically"
+       ]
+     },
+     "Project Management Basics": {
+       "Beginner": [
+         "Understanding basic project lifecycle",
+         "Familiarity with project management methodologies (e.g., Agile, Waterfall - overview)"
+       ],
+       "Intermediate": [
+         "Participating in project planning and execution",
+         "Basic task management and tracking",
+         "Identifying and escalating risks and issues"
+       ],
+       "Advanced": [
+         "Managing small to medium-sized projects independently",
+         "Creating project plans and timelines",
+         "Risk and issue management with mitigation strategies"
+       ]
+     },
+     "Communication and Collaboration": {
+       "Beginner": ["Clear written and verbal communication within the team"],
+       "Intermediate": [
+         "Communicating technical concepts to non-technical stakeholders",
+         "Facilitating team discussions",
+         "Providing constructive feedback"
+       ],
+       "Advanced": [
+         "Presenting technical strategies and project updates to leadership",
+         "Negotiation and conflict resolution skills",
+         "Building strong working relationships across teams"
+       ]
+     }
+   },
+   "Level 2: Team Leadership and Management": {
+     "Team Building and Motivation": {
+       "Beginner": ["Understanding team roles and responsibilities"],
+       "Intermediate": [
+         "Contributing to a positive team environment",
+         "Recognizing and appreciating team contributions",
+         "Understanding basic motivational factors"
+       ],
+       "Advanced": [
+         "Building high-performing teams",
+         "Motivating and inspiring team members",
+         "Fostering a culture of collaboration and innovation"
+       ]
+     },
+     "Performance Management": {
+       "Beginner": ["Understanding performance expectations"],
+       "Intermediate": [
+         "Providing regular feedback to team members",
+         "Identifying areas for improvement",
+         "Participating in performance reviews"
+       ],
+       "Advanced": [
+         "Conducting performance reviews and providing constructive criticism",
+         "Setting clear goals and expectations for team members",
+         "Coaching and mentoring team members for career growth"
+       ]
+     },
+     "Delegation and Empowerment": {
+       "Beginner": ["Completing assigned tasks effectively"],
+       "Intermediate": [
+         "Taking ownership of assigned areas",
+         "Seeking opportunities for growth"
+       ],
+       "Advanced": [
+         "Delegating tasks effectively and providing necessary support",
+         "Empowering team members to take ownership and make decisions",
+         "Trusting team members' abilities"
+       ]
+     }
+   },
+   "Level 3: Strategic Thinking and Execution": {
+     "Technical Strategy and Vision": {
+       "Beginner": ["Understanding the team's technical direction"],
+       "Intermediate": [
+         "Contributing to technical discussions and providing input",
+         "Understanding the business impact of technical decisions"
+       ],
+       "Advanced": [
+         "Contributing to the development of the team's technical strategy",
+         "Aligning technical decisions with business goals",
+         "Identifying emerging technologies and their potential impact"
+       ]
+     },
+     "Resource Planning and Allocation": {
+       "Beginner": ["Awareness of team resources"],
+       "Intermediate": [
+         "Providing input on resource needs",
+         "Managing personal workload effectively"
+       ],
+       "Advanced": [
+         "Planning and allocating team resources effectively",
+         "Forecasting future resource needs",
+         "Managing budgets and timelines"
+       ]
+     },
+     "Stakeholder Management": {
+       "Beginner": [
+         "Interacting with immediate team members and direct stakeholders"
+       ],
+       "Intermediate": [
+         "Building relationships with key stakeholders",
+         "Understanding stakeholder needs and expectations",
+         "Managing stakeholder communication"
+       ],
+       "Advanced": [
+         "Managing relationships with diverse and senior stakeholders",
+         "Influencing stakeholder decisions",
+         "Negotiating priorities and managing expectations"
+       ]
+     }
+   },
+   "Level 4: Organizational Leadership and Growth": {
+     "Strategy Alignment": {
+       "Beginner": ["Understanding the organization's mission and values"],
+       "Intermediate": [
+         "Understanding how the team's work contributes to organizational goals"
+       ],
+       "Advanced": [
+         "Aligning team strategy with overall organizational strategy",
+         "Contributing to organizational planning and decision-making"
+       ]
+     },
+     "Developing Talent": {
+       "Beginner": ["Focusing on personal growth and development"],
+       "Intermediate": [
+         "Mentoring junior team members",
+         "Identifying training needs within the team"
+       ],
+       "Advanced": [
+         "Developing talent development strategies for the team and organization",
+         "Identifying and fostering future leaders",
+         "Creating a learning organization"
+       ]
+     },
+     "Driving Innovation": {
+       "Beginner": ["Adapting to changes within the team"],
+       "Intermediate": [
+         "Identifying opportunities for improvement",
+         "Contributing to the implementation of new ideas"
+       ],
+       "Advanced": [
+         "Leading and driving innovation within the team and organization",
+         "Managing change effectively",
+         "Fostering a culture of continuous improvement"
+       ]
+     },
+     "Business Acumen": {
+       "Beginner": ["Awareness of project budgets"],
+       "Intermediate": [
+         "Understanding the financial implications of technical decisions",
+         "Contributing to budget planning"
+       ],
+       "Advanced": [
+         "Managing team budgets and resources effectively",
+         "Understanding key business metrics",
+         "Making business-driven technical decisions"
+       ]
+     }
+   }
+ }

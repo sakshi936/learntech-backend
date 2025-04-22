@@ -1,0 +1,229 @@
+{
+   "Level 1: Foundations": {
+     "Core Concepts": {
+       "Beginner": [
+         "What is Blockchain?",
+         "Decentralization and Distributed Ledgers",
+         "Immutability and Data Integrity",
+         "Transparency and Openness"
+       ],
+       "Intermediate": [
+         "Hashing Algorithms (SHA-256, Keccak-256) - Deep Dive",
+         "Cryptography (Public/Private Keys, Digital Signatures)",
+         "Merkle Trees and Data Verification"
+       ],
+       "Advanced": [
+         "Types of Blockchains (Public, Private, Consortium, Hybrid)",
+         "Blockchain Architectures",
+         "Byzantine Fault Tolerance and Distributed Consensus"
+       ]
+     },
+     "Smart Contracts": {
+       "Beginner": [
+         "What are Smart Contracts and Their Purpose?",
+         "Use Cases and Applications of Smart Contracts"
+       ],
+       "Intermediate": [
+         "Smart Contract Structure and Components",
+         "Introduction to Solidity Programming Language",
+         "Gas and Transaction Costs - Basic Understanding"
+       ],
+       "Advanced": [
+         "Smart Contract Security Considerations (Common Vulnerabilities Overview)",
+         "Testing and Deployment Lifecycle of Smart Contracts",
+         "Smart Contract Standards (e.g., ERC-20 Basics)"
+       ]
+     },
+     "Decentralized Applications": {
+       "Beginner": [
+         "Understanding the dApp Ecosystem (Frontend, Backend, Smart Contracts)",
+         "Basic Interaction Flow of a dApp"
+       ],
+       "Intermediate": [
+         "Introduction to Web3.js/Ethers.js for Frontend Interaction",
+         "Wallet Integration (MetaMask and other providers - basic usage)",
+         "Basic Frontend Development for dApps (HTML, CSS, JavaScript)"
+       ],
+       "Advanced": [
+         "State Management in dApps (Basic Concepts)",
+         "Backend Considerations for dApps (APIs, Node.js/Python Introduction)",
+         "User Experience (UX) and User Interface (UI) Principles for dApps"
+       ]
+     }
+   },
+   "Level 2: Core Development Skills": {
+     "Solidity Programming": {
+       "Beginner": [
+         "Solidity Syntax, Data Types, Variables, Operators",
+         "Control Structures (if/else, loops)",
+         "Functions (Modifiers, Visibility, Return Values)",
+         "Events and Logging"
+       ],
+       "Intermediate": [
+         "Inheritance and Polymorphism",
+         "Libraries and Using External Code",
+         "Interfaces and Abstract Contracts",
+         "Error Handling and Assertions"
+       ],
+       "Advanced": [
+         "Advanced Data Structures (Mappings, Structs, Arrays - in-depth)",
+         "Gas Optimization Techniques",
+         "Assembly (Yul) for Fine-Grained Control",
+         "Design Patterns in Solidity"
+       ]
+     },
+     "Smart Contract Development": {
+       "Beginner": [
+         "Setting up a Development Environment (e.g., Remix IDE)",
+         "Writing Basic Smart Contracts"
+       ],
+       "Intermediate": [
+         "Testing Smart Contracts (Unit Tests, Integration Tests - basic frameworks like Truffle/Hardhat)",
+         "Deployment to Test Networks",
+         "Understanding Common Smart Contract Vulnerabilities (e.g., Reentrancy, Overflow)"
+       ],
+       "Advanced": [
+         "Advanced Testing Strategies (Fuzzing, Formal Verification Introduction)",
+         "Security Best Practices and Secure Coding Patterns",
+         "Working with Different Deployment Environments (Mainnet, Testnets)"
+       ]
+     },
+     "Backend Integration": {
+       "Beginner": ["Introduction to APIs and Backend Concepts"],
+       "Intermediate": [
+         "Using Node.js/Python to Interact with Blockchain Nodes (Infura, Alchemy, Local Nodes)",
+         "Setting up Backend APIs to Serve dApp Data",
+         "Event Listeners and Indexing Blockchain Data"
+       ],
+       "Advanced": [
+         "Building Scalable and Robust Backend Architectures for High-Traffic dApps",
+         "Off-Chain Data Storage Solutions (IPFS, Arweave)",
+         "Advanced API Development (GraphQL)",
+         "Caching Strategies for Blockchain Data"
+       ]
+     }
+   },
+   "Level 3: Advanced Concepts and Ecosystem": {
+     "Advanced Smart Contract": {
+       "Beginner": [
+         "Introduction to Token Standards (ERC-20, ERC-721, ERC-1155 - basic concepts)"
+       ],
+       "Intermediate": [
+         "In-depth Understanding of Token Standards (Implementation Details, Use Cases)",
+         "Oracles and Bringing Off-Chain Data On-Chain",
+         "Decentralized Autonomous Organizations (DAOs) - Structure and Governance"
+       ],
+       "Advanced": [
+         "Advanced Tokenomics and Incentive Mechanisms",
+         "Governance Models and Implementation",
+         "Layer 2 Scaling Solutions (Rollups, Sidechains - Architecture and Implementation)",
+         "Interoperability Protocols (Cross-Chain Communication)"
+       ]
+     },
+     "Scalability": {
+       "Beginner": ["Understanding Blockchain Scalability Challenges"],
+       "Intermediate": [
+         "Layer 2 Scaling Solutions (Rollups - Optimistic and ZK, Sidechains - Practical Implementation)",
+         "State Channels and Payment Channels"
+       ],
+       "Advanced": [
+         "Sharding Techniques",
+         "Plasma and Other Advanced Scaling Solutions",
+         "Performance Optimization at the Protocol Level"
+       ]
+     },
+     "Security and Auditing": {
+       "Beginner": [
+         "Awareness of Common Security Threats in the Blockchain Space"
+       ],
+       "Intermediate": [
+         "Smart Contract Auditing Process and Methodologies",
+         "Common Vulnerability Patterns and Mitigation Strategies",
+         "Basic Security Analysis Tools"
+       ],
+       "Advanced": [
+         "Formal Verification Techniques and Tools",
+         "Advanced Security Patterns and Best Practices",
+         "Performing and Interpreting Comprehensive Security Audits",
+         "Incident Response and Security Monitoring"
+       ]
+     },
+     "Ecosystem and Tools": {
+       "Beginner": [
+         "Overview of Different Blockchain Platforms (Ethereum, Polygon, Binance Smart Chain, etc.)"
+       ],
+       "Intermediate": [
+         "In-depth Usage of Development Frameworks (Hardhat, Truffle) and Their Features",
+         "Advanced Testing Frameworks and Techniques",
+         "Deployment and Infrastructure Management Tools"
+       ],
+       "Advanced": [
+         "Contributing to Open Source Blockchain Projects",
+         "Understanding the Strengths and Weaknesses of Different Blockchain Ecosystems",
+         "Exploring Emerging Blockchain Technologies and Research Areas",
+         "Building and Managing Blockchain Infrastructure"
+       ]
+     }
+   },
+   "Level 4: Specializations and Future Trends": {
+     "DeFi Development": {
+       "Beginner": [
+         "Introduction to DeFi Concepts and Applications (Lending, Borrowing, DEXs)"
+       ],
+       "Intermediate": [
+         "Building Basic DeFi Protocols",
+         "Understanding DeFi Security Risks and Mitigation",
+         "Working with DeFi Development Tools and Frameworks"
+       ],
+       "Advanced": [
+         "Designing and Implementing Complex DeFi Strategies",
+         "Cross-Chain DeFi Solutions",
+         "Governance and Sustainability of DeFi Protocols"
+       ]
+     },
+     "NFTs and Metaverse": {
+       "Beginner": [
+         "Understanding NFT Standards (ERC-721, ERC-1155) and Use Cases",
+         "Introduction to Metaverse Concepts"
+       ],
+       "Intermediate": [
+         "Developing NFT Marketplaces and Platforms",
+         "Integrating NFTs with dApps and Games",
+         "Basic Metaverse Development Frameworks"
+       ],
+       "Advanced": [
+         "Advanced NFT Functionality (e.g., Dynamic NFTs)",
+         "Building Immersive Metaverse Experiences",
+         "Interoperability of NFTs and Metaverse Assets"
+       ]
+     },
+     "Enterprise Solutions": {
+       "Beginner": [
+         "Understanding Enterprise Use Cases for Blockchain (Supply Chain, Identity Management)"
+       ],
+       "Intermediate": [
+         "Working with Private and Consortium Blockchains",
+         "Developing Permissioned Blockchain Applications",
+         "Integration with Existing Enterprise Systems"
+       ],
+       "Advanced": [
+         "Designing Scalable and Secure Enterprise Blockchain Architectures",
+         "Compliance and Regulatory Considerations for Enterprise Blockchain",
+         "Interoperability between Enterprise and Public Blockchains"
+       ]
+     },
+     "Emerging Trends": {
+       "Beginner": [
+         "Awareness of New Developments in the Blockchain Space (e.g., Account Abstraction, Zero-Knowledge Proofs)"
+       ],
+       "Intermediate": [
+         "Understanding the Technical Concepts Behind Emerging Trends",
+         "Exploring Potential Applications of New Technologies"
+       ],
+       "Advanced": [
+         "Contributing to Research and Development in Cutting-Edge Blockchain Technologies",
+         "Evaluating the Impact of Emerging Trends on the Future of Blockchain"
+       ]
+     }
+   }
+ }

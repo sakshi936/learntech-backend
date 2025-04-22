@@ -1,0 +1,136 @@
+{
+   "Level 1": {
+     "Design Fundamentals": {
+       "Beginner": [
+         "What is UI/UX Design?",
+         "Principles of Design (Balance, Contrast, Emphasis)",
+         "Color Theory Basics",
+         "Typography Basics",
+         "Understanding Grids and Layouts"
+       ],
+       "Intermediate": [
+         "Visual Hierarchy",
+         "Gestalt Principles in Design",
+         "Branding and Visual Identity"
+       ],
+       "Advanced": [
+         "Design Systems (Material Design, Human Interface Guidelines)",
+         "Accessibility Principles (WCAG Standards)"
+       ]
+     },
+     "UX Fundamentals": {
+       "Beginner": [
+         "What is User Experience (UX)?",
+         "User Research Basics",
+         "Personas and User Journeys"
+       ],
+       "Intermediate": [
+         "Information Architecture",
+         "Wireframing Techniques",
+         "Usability Heuristics"
+       ],
+       "Advanced": [
+         "User Testing Methods",
+         "A/B Testing",
+         "UX Strategy and KPIs"
+       ]
+     },
+     "UI Fundamentals": {
+       "Beginner": [
+         "Introduction to User Interface (UI)",
+         "Basic Components (Buttons, Inputs, Modals)"
+       ],
+       "Intermediate": [
+         "Responsive and Adaptive Design",
+         "Microinteractions (Hover Effects, Animations)"
+       ],
+       "Advanced": [
+         "High-Fidelity Prototypes",
+         "Component Libraries and Design Tokens"
+       ]
+     }
+   },
+   "Level 2": {
+     "Tools Mastery": {
+       "Beginner": ["Figma Basics", "Sketch Basics", "Adobe XD Basics"],
+       "Intermediate": [
+         "Prototyping in Figma/Sketch/XD",
+         "Plugins and Extensions"
+       ],
+       "Advanced": [
+         "Design Handoff (Zeplin, Avocode)",
+         "Collaborative Design Workflows"
+       ]
+     },
+     "Interaction Design (IxD)": {
+       "Beginner": [
+         "What is Interaction Design?",
+         "Common Interaction Patterns"
+       ],
+       "Intermediate": [
+         "Task Flows and User Flows",
+         "Transitions and Motion Design"
+       ],
+       "Advanced": [
+         "Advanced Animation Prototyping (Principle, After Effects)"
+       ]
+     }
+   },
+   "Level 3": {
+     "Research and Analysis": {
+       "Beginner": [
+         "Conducting User Interviews",
+         "Surveys and Feedback Collection"
+       ],
+       "Intermediate": [
+         "Analyzing User Behavior (Heatmaps, Analytics)",
+         "Creating Empathy Maps"
+       ],
+       "Advanced": [
+         "Advanced UX Research Techniques",
+         "Data-Driven Design Decisions"
+       ]
+     },
+     "Advanced UX/UI Concepts": {
+       "Beginner": [
+         "Mobile-First Design Principles",
+         "Web vs Mobile UX Differences"
+       ],
+       "Intermediate": [
+         "Gamification in UX",
+         "Conversational UI (Voice, Chatbots)"
+       ],
+       "Advanced": [
+         "Augmented Reality (AR) and Virtual Reality (VR) UX",
+         "Designing for Wearables and IoT"
+       ]
+     }
+   },
+   "level 4": {
+     "Portfolio and Career Building": {
+       "Beginner": [
+         "Building a Design Portfolio",
+         "Case Study Writing Basics"
+       ],
+       "Intermediate": [
+         "Personal Branding for Designers",
+         "Networking in the Design Community"
+       ],
+       "Advanced": [
+         "Freelancing vs Full-time Opportunities",
+         "Job Interview Preparation (Whiteboard Challenges, Design Exercises)"
+       ]
+     },
+     "Soft Skills and Design Thinking": {
+       "Beginner": ["Critical Thinking", "Creative Problem Solving"],
+       "Intermediate": [
+         "Collaboration with Developers and PMs",
+         "Agile UX and Scrum Basics"
+       ],
+       "Advanced": [
+         "Facilitating Design Workshops",
+         "Storytelling with Design"
+       ]
+     }
+   }
+ }

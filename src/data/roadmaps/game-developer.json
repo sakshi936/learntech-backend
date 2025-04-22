@@ -1,0 +1,232 @@
+{
+   "Level 1: Foundations": {
+     "Game Design Fundamentals": {
+       "Beginner": [
+         "Core Game Concepts (Genres, Mechanics, Objectives)",
+         "Understanding Player Experience (Fun, Engagement)",
+         "Basic Level Design Principles",
+         "Introduction to Game Documentation (GDD - Game Design Document)"
+       ],
+       "Intermediate": [
+         "Game Balancing and Iteration",
+         "Narrative Design Basics (Storytelling in Games)",
+         "User Interface (UI) and User Experience (UX) Principles for Games",
+         "Advanced Level Design Concepts (Pacing, Flow)"
+       ],
+       "Advanced": [
+         "System Design (Interconnected Mechanics)",
+         "Economy Design (In-Game Currencies, Progression)",
+         "Player Psychology and Motivation",
+         "Monetization Strategies (if applicable)"
+       ]
+     },
+     "Programming Basics for Games": {
+       "Beginner": [
+         "Introduction to Programming Concepts (Variables, Data Types, Control Flow)",
+         "Choosing a Game Engine (Unity, Unreal Engine, Godot - Overview)",
+         "Basic Scripting in the Chosen Engine (e.g., C# in Unity, C++ in Unreal, GDScript in Godot)"
+       ],
+       "Intermediate": [
+         "Object-Oriented Programming (OOP) Principles",
+         "Game-Specific Programming Concepts (Game Loops, Input Handling, Collision Detection - Basic)",
+         "Data Structures and Algorithms for Games (Basic)"
+       ],
+       "Advanced": [
+         "Advanced Programming Patterns",
+         "Performance Optimization Techniques",
+         "Multiplayer Programming Fundamentals (Networking Basics)",
+         "Artificial Intelligence (AI) Basics for Games"
+       ]
+     },
+     "Art and Asset Creation Basics": {
+       "Beginner": [
+         "Introduction to 2D and 3D Art Concepts",
+         "Basic Principles of Visual Design (Color Theory, Composition)",
+         "Overview of Art Software (e.g., Photoshop, Blender)",
+         "Introduction to Animation Principles"
+       ],
+       "Intermediate": [
+         "Creating Basic 2D Assets (Sprites, Tilesets)",
+         "Introduction to 3D Modeling (Basic Shapes, Sculpting)",
+         "Basic Animation Techniques (Keyframe, Skeletal)",
+         "Introduction to Audio Design (Sound Effects, Music Basics)"
+       ],
+       "Advanced": [
+         "Advanced 2D and 3D Art Techniques",
+         "Character Rigging and Animation",
+         "Creating Particle Systems and Visual Effects (VFX)",
+         "Implementing Audio Assets in a Game Engine"
+       ]
+     }
+   },
+   "Level 2: Core Development Skills": {
+     "Game Engine Proficiency": {
+       "Beginner": [
+         "Navigating the Engine Interface",
+         "Understanding Core Engine Features (Scene Management, Prefabs/Blueprints, Asset Pipeline)",
+         "Basic Scripting and Event Handling within the Engine"
+       ],
+       "Intermediate": [
+         "Working with Physics Systems",
+         "Implementing UI Systems within the Engine",
+         "Animation Controllers and State Machines",
+         "Basic Lighting and Rendering Techniques"
+       ],
+       "Advanced": [
+         "Custom Editor Scripting and Tool Creation",
+         "Advanced Rendering Pipelines",
+         "Profiling and Optimization within the Engine",
+         "Extending Engine Functionality through Plugins/Extensions"
+       ]
+     },
+     "Gameplay Programming": {
+       "Beginner": [
+         "Implementing Core Game Mechanics (Movement, Jumping, Shooting - Basic)",
+         "Handling Player Input",
+         "Basic Collision Detection and Response"
+       ],
+       "Intermediate": [
+         "Implementing More Complex Mechanics",
+         "AI for Simple Enemies (Pathfinding Basics, Basic Behaviors)",
+         "Implementing Game Rules and Logic",
+         "Working with Game States"
+       ],
+       "Advanced": [
+         "Advanced AI Techniques (State Machines, Behavior Trees)",
+         "Implementing Complex Physics Interactions",
+         "Networking and Multiplayer Gameplay (Intermediate Concepts)",
+         "Procedural Content Generation (Basic)"
+       ]
+     },
+     "Game Art and Animation": {
+       "Beginner": [
+         "Creating Game-Ready 2D Assets (Optimization, Exporting)",
+         "Basic 3D Modeling for Games (Low-Poly)",
+         "Implementing Basic Animations in the Engine"
+       ],
+       "Intermediate": [
+         "Creating More Complex 2D and 3D Assets",
+         "Character Rigging and Skinning",
+         "Creating and Implementing More Complex Animations",
+         "Introduction to Shader Basics for Visual Effects"
+       ],
+       "Advanced": [
+         "Advanced 3D Sculpting and Texturing",
+         "Motion Capture and Integration",
+         "Creating High-Quality Visual Effects",
+         "Optimizing Art Assets for Performance"
+       ]
+     }
+   },
+   "Level 3: Specializations and Advanced Topics": {
+     "Advanced Game Design": {
+       "Beginner": [
+         "Understanding Different Game Genres in Depth",
+         "Introduction to Monetization Models (Free-to-Play, Premium)",
+         "Basic Analytics and Player Data"
+       ],
+       "Intermediate": [
+         "Designing for Specific Platforms (Mobile, PC, Console)",
+         "Advanced Narrative Design and Branching Storylines",
+         "Designing Engaging Multiplayer Experiences"
+       ],
+       "Advanced": [
+         "Designing Accessible Games",
+         "Implementing Complex Economic Systems",
+         "Data-Driven Game Design and Live Operations",
+         "Virtual and Augmented Reality (VR/AR) Game Design Principles"
+       ]
+     },
+     "Advanced Techniques": {
+       "Beginner": ["Introduction to Design Patterns in Game Development"],
+       "Intermediate": [
+         "Implementing Advanced AI Systems (Machine Learning Basics for Games)",
+         "Networking Architectures for Multiplayer Games",
+         "Advanced Physics Simulation"
+       ],
+       "Advanced": [
+         "Writing Custom Game Engines or Frameworks",
+         "Low-Level Optimization and Memory Management",
+         "Cross-Platform Development Strategies",
+         "Procedural Content Generation (Advanced)"
+       ]
+     },
+     "Specialized Art": {
+       "Beginner": ["Understanding Different Art Styles and Pipelines"],
+       "Intermediate": [
+         "Creating Specialized Art Assets (e.g., Environments, Vehicles)",
+         "Advanced Character Art and Animation",
+         "Implementing Interactive Audio and Soundscapes"
+       ],
+       "Advanced": [
+         "Technical Art (Shaders, Materials, Pipelines)",
+         "Motion Graphics and Cinematics",
+         "Adaptive and Dynamic Audio Systems",
+         "Working with External Audio Middleware (e.g., Wwise, FMOD)"
+       ]
+     },
+     "Game Production": {
+       "Beginner": ["Basic Understanding of Game Development Teams and Roles"],
+       "Intermediate": [
+         "Introduction to Agile and Waterfall Methodologies",
+         "Using Project Management Tools (e.g., Jira, Trello)",
+         "Basic Version Control (Git)"
+       ],
+       "Advanced": [
+         "Leading and Managing Game Development Teams",
+         "Project Planning and Scheduling",
+         "Risk Management in Game Development",
+         "Marketing and Publishing Strategies"
+       ]
+     }
+   },
+   "Level 4: Emerging Trends and Mastery": {
+     "Emerging Technologies": {
+       "Beginner": [
+         "Awareness of New Technologies (Ray Tracing, Cloud Gaming, Blockchain in Games)"
+       ],
+       "Intermediate": [
+         "Understanding the Basics of Emerging Technologies and Their Potential Impact on Games"
+       ],
+       "Advanced": [
+         "Experimenting with and Implementing Emerging Technologies in Game Projects",
+         "Researching and Contributing to the Advancement of Game Technology"
+       ]
+     },
+     "Cross-Disciplinary Skills": {
+       "Beginner": [
+         "Understanding the Basics of Other Related Fields (e.g., Psychology, Sociology)"
+       ],
+       "Intermediate": [
+         "Applying Knowledge from Other Fields to Enhance Game Design and Player Experience"
+       ],
+       "Advanced": [
+         "Conducting Research and Applying Interdisciplinary Insights to Game Development"
+       ]
+     },
+     "Indie Development": {
+       "Beginner": ["Understanding the Basics of Indie Game Development"],
+       "Intermediate": [
+         "Planning and Developing an Indie Game Project",
+         "Marketing and Promoting Indie Games",
+         "Exploring Funding Options"
+       ],
+       "Advanced": [
+         "Launching and Sustaining an Indie Game Studio",
+         "Navigating the Business Side of Game Development"
+       ]
+     },
+     "Continuous Learning": {
+       "Beginner": ["Understanding the Importance of Continuous Learning"],
+       "Intermediate": [
+         "Building a Strong Portfolio to Showcase Skills",
+         "Actively Participating in the Game Development Community"
+       ],
+       "Advanced": [
+         "Contributing to Open-Source Game Development Projects",
+         "Mentoring and Sharing Knowledge with Others",
+         "Staying Updated with the Latest Trends and Techniques"
+       ]
+     }
+   }
+ }
