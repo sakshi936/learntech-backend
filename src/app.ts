@@ -8,6 +8,7 @@ import progressRoutes from "./routes/progressRoutes";
 import roadmapRoutes from "./routes/roadmapRoutes";
 import blogRoutes from "./routes/uploadBlog.route";
 import questionRoutes from "./routes/questionRoutes";
+import eventRoutes from "./routes/eventRoutes";
 // Configure dotenv
 dotenv.config();
 
@@ -38,6 +39,7 @@ app.use("/roadmaps", roadmapRoutes);
 //  blog routes
 app.use("/api/blogs", blogRoutes);
 app.use("/questions", questionRoutes);
+app.use("/events",eventRoutes)
 
 app.get("/", (req: Request, res: Response) => {
 	res.send("Successfully Connected with TechLearn Backend");

@@ -13,6 +13,7 @@ const progressRoutes_1 = __importDefault(require("./routes/progressRoutes"));
 const roadmapRoutes_1 = __importDefault(require("./routes/roadmapRoutes"));
 const uploadBlog_route_1 = __importDefault(require("./routes/uploadBlog.route"));
 const questionRoutes_1 = __importDefault(require("./routes/questionRoutes"));
+const eventRoutes_1 = __importDefault(require("./routes/eventRoutes"));
 // Configure dotenv
 dotenv_1.default.config();
 const app = (0, express_1.default)();
@@ -35,6 +36,7 @@ app.use("/roadmaps", roadmapRoutes_1.default);
 //  blog routes
 app.use("/api/blogs", uploadBlog_route_1.default);
 app.use("/questions", questionRoutes_1.default);
+app.use("/events", eventRoutes_1.default);
 app.get("/", (req, res) => {
     res.send("Successfully Connected with TechLearn Backend");
 });

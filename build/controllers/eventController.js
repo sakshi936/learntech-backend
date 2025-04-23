@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createEvent = void 0;
+exports.getEvents = exports.createEvent = void 0;
 const eventModel_1 = require("../models/eventModel");
 const createEvent = async (req, res) => {
     try {
@@ -30,3 +30,13 @@ const createEvent = async (req, res) => {
     }
 };
 exports.createEvent = createEvent;
+const getEvents = async (req, res) => {
+    try {
+        const events = await eventModel_1.EventModel.find();
+        res.status(200).json(events);
+    }
+    catch (error) {
+        res.status(500).json({ message: 'Error fetching events', error });
+    }
+};
+exports.getEvents = getEvents;

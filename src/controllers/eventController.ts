@@ -32,4 +32,12 @@ export const createEvent = async (req: Request, res: Response) => {
    }
 }
 
+export const getEvents = async (req: Request, res: Response) => {
+   try {
+      const events = await EventModel.find();
+      res.status(200).json(events);
+   } catch (error) {
+      res.status(500).json({ message: 'Error fetching events', error });
+   }
+}
 
